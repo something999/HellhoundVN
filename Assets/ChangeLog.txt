@@ -1,0 +1,8 @@
+CHANGELOG
+---------------
+2020-12-11 14:57 PST
+- Added Resources folder
+- Added Scripts folder
+- Added Sprites folder
+- Added Character class 
+- Added debug characters & images for testing purposes
