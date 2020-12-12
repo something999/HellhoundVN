@@ -1,6 +1,11 @@
 CHANGELOG
 ---------------
+2020-12-11 16:33 PST
+- Added Parser class with basic functionality for reading scripts
+- Added a debug script for testing purposes 
+---------------
 2020-12-11 14:57 PST
+- Added a Changelog to keep track of changes
 - Added Resources folder
 - Added Scripts folder
 - Added Sprites folder

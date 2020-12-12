@@ -1,0 +1,9 @@
+SCENE - WENDYS
+Char1: (angry) "I'm just saying we could find aliens if the government really tried."
+"We have the technology!"
+(fear) "Unless -- you don't think --"
+"<i>That the government is made of aliens!</i>"
+                
+Char2: "<i>(Why did I take this job again?)</i>"
+"Mam, this is a Wendy's."
+(angry) "Now, please, can I have your order? <b>You're holding up the line.</b>"
