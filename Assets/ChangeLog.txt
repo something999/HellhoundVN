@@ -1,5 +1,9 @@
 CHANGELOG
 ---------------
+2020-12-11 17:10 PST
+- Added TestScene with an empty game object for testing purposes
+- Modified Parser class so we can now retrieve a list of commands rather than do everything within the Parser class
+---------------
 2020-12-11 16:33 PST
 - Added Parser class with basic functionality for reading scripts
 - Added a debug script for testing purposes 
