@@ -1,5 +1,13 @@
 CHANGELOG
 ---------------
+2020-12-12 13:37 PST
+- Added functionality for changing backgrounds
+- Added functionality for changing character sprites
+- Added functionality for adjusting image widths and heights
+- Modified UIManager to distinguish thoughts and speech 
+- Modified Parser to process thoughts
+- Modified debug dialogue to better reflect the writing's format
+---------------
 2020-12-12 12:56 PST
 - Added a UIManager class to handle UI-specific tasks
 - Added a SpriteManager class to handle sprite-finding tasks

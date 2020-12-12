@@ -27,15 +27,19 @@ public class GameManager : Parser
             switch (c.type)
             {
                 case "scene": 
-                    ui.ChangeBackgroundImage(sprite_manager.GetPath(c.arg));
+                    ui.ChangeBackgroundImage(sprite_manager.GetBackgroundPath(c.arg));
                     break;
                 case "emotion": 
+                    ui.ChangeCharacterImage(sprite_manager.GetCharacterPath(c.arg));
                     break;
                 case "character":
                     ui.ChangeCharacterText(c.arg);
                     break;
                  case "dialogue":
                     yield return ui.ChangeDialogueText(c.arg);
+                    break;
+                 case "thought":
+                    yield return ui.ChangeDialogueText(c.arg, true);
                     break;
                  default:
                     break;

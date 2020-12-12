@@ -1,9 +1,17 @@
-SCENE - WENDYS
-Char1: (angry) "I'm just saying we could find aliens if the government really tried."
-"We have the technology!"
-(fear) "Unless -- you don't think --"
-"<i>That the government is made of aliens!</i>"
-                
-Char2: "<i>(Why did I take this job again?)</i>"
-"Mam, this is a Wendy's."
-(angry) "Now, please, can I have your order? <b>You're holding up the line.</b>"
+SCENE - ZUCKERBORK
+
+Acacia: "Is this…an office…?" [Confused]
+Zuckerbork: "Ah, so my cawooculations were correct then. You arrived here exactly at the time I predicted." [Neutral]
+"Shame you killed my packmate though. She wasn't the brightest of the litter but she still had her charms I suppose..." [Neutral]
+
+Acacia: "W-wait! I didn't kill anyone!" [Surprise]
+"I just gave her a fortune is all! I'd never do something like that..." [Surprise]
+ 
+Zuckerbork:"Fortune...? Hahahah, perpawsterous!" [Disgust]
+"Childish magic tricks can't compete with reality, not even here in Hell." [Disgust]
+"Why don't I eat you right now and we can both get this over with?" [Neutral]
+"I have to release and update for Snoutbook in an hour and I would rather it not be late due to some crystal ball mumbo jumbo." [Neutral]
+
+Acacia: 'Shit, he doesn't seem as carefree as the last one.' [Fear]
+'If I don't figure something out fast I'm dog food.' [Fear]
+"H-hold on a sec!" [Fear]
