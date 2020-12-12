@@ -1,7 +1,12 @@
 CHANGELOG
 ---------------
+2020-12-12 12:03 PST
+- Added placeholder image for testing purposes
+- Modified Parser class to better suit the script format
+---------------
 2020-12-11 21:13 PST
 - Added a GameManager so we can later trigger events
+- Added a placeholder UI for testing purposes
 - Added functionality for reading a single script
 - Modified Parser class to remove old code
 - Modified Parser class to use List instead of ArrayList (which is deprecated)
