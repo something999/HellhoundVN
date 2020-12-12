@@ -7,12 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Parser : MonoBehaviour
-{
-    public void Start()
-    {
-        // Parse("Assets/Resources/Texts/SampleDialogue.txt"); // Debug statement --> Remove once GameManager is finished
-    }
-   
+{  
    // Represents a command (a change that's supposed to happen in the scene)
     public struct command
     {
@@ -44,7 +39,8 @@ public class Parser : MonoBehaviour
             new regular_expression(new Regex("(?'character'.*?):", RegexOptions.Compiled), "character"), // Character
             new regular_expression(new Regex("(?!\\B\"[^\"]*)\\((?'position'.*)\\)(?![^\"]*\"\\B)", RegexOptions.Compiled), "position"), // Emotion (image for character)
             new regular_expression(new Regex("(?!\\B\"[^\"]*)\\[(?'emotion'.*)\\](?![^\"]*\"\\B)", RegexOptions.Compiled), "emotion"), // Emotion (image for character)
-            new regular_expression(new Regex("(?'dialogue'\".*\")", RegexOptions.Compiled), "dialogue") // Dialogue
+            new regular_expression(new Regex("(?'dialogue'\".*\")", RegexOptions.Compiled), "dialogue"), // Dialogue
+            new regular_expression(new Regex("(?'dialogue'\'.*\')", RegexOptions.Compiled), "thought") // Dialogue
         };
     
     // Parses the instructions written in the filepath
