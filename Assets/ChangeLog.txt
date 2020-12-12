@@ -5,7 +5,7 @@ CHANGELOG
 - Added a SpriteManager class to handle sprite-finding tasks
 - Modified GameManager to remove UI-related functionality
 - Modified debug image for easier testing (ex. not a simple white square)
-- Removed Character class (not needed)
+- Removed Character class (not needed) and related debugging materials
 ---------------
 2020-12-12 12:03 PST
 - Added placeholder image for testing purposes
