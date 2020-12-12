@@ -10,11 +10,11 @@ public class Parser : MonoBehaviour
 {
     public void Start()
     {
-        Parse("Assets/Resources/Texts/SampleDialogue.txt"); // Debug statement --> Remove once GameManager is finished
+        // Parse("Assets/Resources/Texts/SampleDialogue.txt"); // Debug statement --> Remove once GameManager is finished
     }
    
    // Represents a command (a change that's supposed to happen in the scene)
-    private struct command
+    public struct command
     {
         public string type; // The type of command (scene, character, emotion, or dialogue)
         public string arg; // The argument for that command (ex. the name of the scene to load, the name of the character to reference, etc.)
@@ -26,7 +26,7 @@ public class Parser : MonoBehaviour
     };
     
     // Represents a regular expression pattern (regex + a group name that is used to retrieve the arguments for the command)
-    private struct regular_expression
+    public struct regular_expression
     {
         public Regex pattern; // The regular expression pattern to use
         public string group_name; // The name to search for
@@ -47,9 +47,9 @@ public class Parser : MonoBehaviour
         };
     
     // Parses the instructions written in the filepath
-    public ArrayList Parse(string filepath)
+    public List<command> Parse(string filepath)
     {
-        ArrayList command_list = new ArrayList();
+        List<command> command_list = new List<command>();
         try
         {
             using (StreamReader reader = new StreamReader(filepath))
@@ -59,8 +59,8 @@ public class Parser : MonoBehaviour
                 {
                     foreach (regular_expression r in regex_list)
                     {
-                        command? cmd = FindRegexMatch(line, r.pattern, r.group_name);
-                        CheckCommand(cmd, command_list);
+                        RecordRegexMatch(line, r.pattern, r.group_name, command_list);
+                        // CheckCommand(cmd, command_list);
                     }
                 }
                 reader.Close();
@@ -74,20 +74,14 @@ public class Parser : MonoBehaviour
         return command_list;
     }
    
-   // Check that there was a match against the pattern. If yes, document this match in the command_list.
-   private void CheckCommand(command? cmd, ArrayList command_list)
-   {
-       if (cmd.HasValue) command_list.Add(cmd);
-   }
-   
     // Attempt to find a match according to this pattern
-    private command? FindRegexMatch(string line, Regex pattern, string group_name)
+    private void RecordRegexMatch(string line, Regex pattern, string group_name, List<command> command_list)
     {
         if (pattern.IsMatch(line))
         {
             GroupCollection groups = pattern.Match(line).Groups;
-            return new command(group_name, groups[group_name].Value);
+            command cmd = new command(group_name, groups[group_name].Value);
+            command_list.Add(cmd);
         }
-        return null;
     }
 }

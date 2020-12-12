@@ -1,5 +1,11 @@
 CHANGELOG
 ---------------
+2020-12-11 21:13 PST
+- Added a GameManager so we can later trigger events
+- Added functionality for reading a single script
+- Modified Parser class to remove old code
+- Modified Parser class to use List instead of ArrayList (which is deprecated)
+---------------
 2020-12-11 17:10 PST
 - Added TestScene with an empty game object for testing purposes
 - Modified Parser class so we can now retrieve a list of commands rather than do everything within the Parser class
