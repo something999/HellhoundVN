@@ -2,25 +2,25 @@ Zuckerbork: "Well, I must say, this went very different from how I expected."[Ha
 "Thank you for enlightening me on the ways of fortune telling."[Happy]
 "From now on, I’ll try not to be so much of a bone in the mud about the unknown."[Happy]
 
-Acacia: "I’m glad I was able to help out!"[Happy]
-"...Does this by chance mean I won’t be eaten?"[Fear]
+Acacia: "I’m glad I was able to help out!"
+"...Does this by chance mean I won’t be eaten?"
 
-Zuckerbork: "Hahahaha! You’re shaking like a newborn pup!"[Happy]
+Zuckerbork: "Hahahaha! You’re shaking like a newborn pup!"[Laughing]
 "No, you will not be eaten. I’d say it’s fair trade for helping me with my career."[Happy]
 "Though this does mean you’ll have to get past my co-worker."[Neutral]
 
-Acacia: "Wait there’s more of you?!?!"[Surprised]
-"Ugh I don’t know if I can handle that…"[Disgust]
+Acacia: "Wait there’s more of you?!?!"
+"Ugh I don’t know if I can handle that…"
 
 Zuckerbork: “Well it’s not like you have much a choice."[Neutral]
 "You’ve proven yourself to be quite likable so I will offer you this advice."[Neutral]
 "She has recently broken up with her boyfriend and is quite upset about it."
 "Perhaps you could offer her some advice?"[Confused]
 
-Acacia:"Well, at least it’s something. Thanks."[Neutral]
+Acacia:"Well, at least it’s something. Thanks."
 
- Zuckerbork:"Don’t mention it."[Happy]
+ Zuckerbork:"Don’t mention it."[Neutral]
 "Now if you’ll excuse me, I have to start looking for career goals."[Neutral]
 "Run along now. If you’re lucky you might be the first human to make it out of hell!"[Happy]
 
-Acacia: "I’ll try my best, sir."[Fear]
+Acacia: "I’ll try my best, sir."

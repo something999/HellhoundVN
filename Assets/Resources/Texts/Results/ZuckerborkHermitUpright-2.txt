@@ -1,10 +1,11 @@
-Acacia: "The Hermit, in the upright position." [Neutral]
-"Snoutbook is becoming a huge success, right?"[Neutral]
-"From what this card is telling me, you’re trying to decide which direction take it."[Happy]
-Zuckerbork: "Why, yes."
-"I was working on the next update before you so rudely interrupted with all this nonsense."[Angry]
-"Even so, what does an update have to do with childhood?"[Angry]
+Acacia: "The Hermit, in the upright position."
+"Snoutbook is becoming a huge success, right?"
+"From what this card is telling me, you’re trying to decide which direction take it."
+
+Zuckerbork: "Why, yes." [Neutral]
+"I was working on the next update before you so rudely interrupted with all this nonsense."[Irritated]
+"Even so, what does an update have to do with childhood?"[Irritated]
 "You really are running out of things to say, aren’t you?"[Disgust]
 
-Acacia: "Wait, n-no, that's not what I meant!"[Surprised]
-'Shit I messed up! I need to think carefully about the meaning of these cards…'[Fear]
+Acacia: "Wait, n-no, that's not what I meant!"
+'Shit I messed up! I need to think carefully about the meaning of these cards…'

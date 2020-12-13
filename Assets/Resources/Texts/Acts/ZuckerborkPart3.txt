@@ -1,24 +1,24 @@
-Acacia: 'Alright past done! This isn't too hard. Now to do the present.'[Happy]
-'Wait a second…' [Confused]
+Acacia: 'Alright past done! This isn't too hard. Now to do the present.'
+'Wait a second…'
 SHOW-Sun,Hermit
-'Happiness and isolation? I can’t work off these!' [Fear]
-'Their meanings are unrelated to what’s going on!' [Fear]
-'I’m screwed!' [Fear]
+'Happiness and isolation? I can’t work off these!' 
+'Their meanings are unrelated to what’s going on!'
+'I’m screwed!' 
 CLEAR
 Zuckerbork: "Is something wrong Ms. Acacia?" [Neutral]
 "You seem to be a bit pale. Perhaps you’ve messed up your little magic trick?" [Happy]
 
-Acacia: "N-no it’s not that!"[Surprised]
-"It’s just...these cards have very interesting meanings!"[Fear]
-"It’ll just take me a bit to properly interpret them. I wanna give an accurate reading, ya know?"[Happy] 
+Acacia: "N-no it’s not that!"
+"It’s just...these cards have very interesting meanings!"
+"It’ll just take me a bit to properly interpret them. I wanna give an accurate reading, ya know?"
 
 Zuckerbork: "..."[Netural]
 "Very well. Take your time I suppose…"[Neutral]
 
-Acacia: 'Shoot, if I don't think of something quick, I’m dead!' [Fear]
-'Wait a sec! I’ve been using all these cards in the upright position.'[Surprised]
-'What if I reverse them?' [Surprised]
-'If I reverse them, I can flip their definitions!' [Happy]
-'Genius, Acacia, genius!' [Happy]
+Acacia: 'Shoot, if I don't think of something quick, I’m dead!' 
+'Wait a sec! I’ve been using all these cards in the upright position.'
+'What if I reverse them?' 
+'If I reverse them, I can flip their definitions!' 
+'Genius, Acacia, genius!'
 
 CHOICE-Sun,Hermit

@@ -1,14 +1,14 @@
-Acacia: "The Sun, in the upright position." [Neutral]
-"Well considering your childhood you must be pretty happy now!"[Happy]
- "You have everything you’ve ever wanted and you’re living your best life!" [Happy]
-"What else is there to say?"[Happy]
+Acacia: "The Sun, in the upright position." 
+"Well considering your childhood you must be pretty happy now!"
+ "You have everything you’ve ever wanted and you’re living your best life!" 
+"What else is there to say?"
 
 Zuckerbork: "..." [Neutral]
-"Have you ever heard the saying ‘money can’t buy happiness?’"[Sadness]
+"Have you ever heard the saying ‘money can’t buy happiness?’"[Confused]
 
-Acacia: "Huh? Are you saying...?" [Confused]
+Acacia: "Huh? Are you saying...?" 
 
-Zuckerbork: "Don’t assume you have all the facts." [Angry]
-"Success isn’t always so glamorous. I suggest you reevaluate your perspective."[Angry]
+Zuckerbork: "Don’t assume you have all the facts." [Neutral]
+"Success isn’t always so glamorous. I suggest you reevaluate your perspective."[Irritated]
 
-Acacia: 'Shit I messed up! I need to think carefully about the meaning of these cards…'[Fear]
+Acacia: 'Shit I messed up! I need to think carefully about the meaning of these cards…'

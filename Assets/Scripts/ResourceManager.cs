@@ -19,8 +19,17 @@ public class ResourceManager : MonoBehaviour
         
         paths_to_characters = new Dictionary<string, string>()
         {
-            {"DEBUG", "Sprites/Debug/BlankCharacter"},
-            {"???", "Sprites/Debug/BlankCharacter"}
+            {"DEBUG", "Sprites/Zuckerbork/ZuckerborkNeutral"},
+            {"Disgust", "Sprites/Zuckerbork/ZuckerborkDisgusted"},
+            {"Angry", "Sprites/Zuckerbork/ZuckerborkAngry"},
+            {"Anger", "Sprites/Zuckerbork/ZuckerborkAngry"},
+            {"Irritated", "Sprites/Zuckerbork/ZuckerborkIrritated"},
+            {"Confused", "Sprites/Zuckerbork/ZuckerborkConfused"},
+            {"Happy", "Sprites/Zuckerbork/ZuckerborkHappy"},
+            {"Laugh", "Sprites/Zuckerbork/ZuckerborkLaughing"},
+            {"Laughing", "Sprites/Zuckerbork/ZuckerborkLaughing"},
+            {"Neutral", "Sprites/Zuckerbork/ZuckerborkNeutral"},
+            {"Sadness", "Sprites/Zuckerbork/ZuckerborkSad"}
         };
         
         paths_to_cards = new Dictionary<string, string>()

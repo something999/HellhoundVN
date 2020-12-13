@@ -1,11 +1,11 @@
-Acacia: "The Sun, reversed. This represents the future."[Neutral]
-"Well, I’m gonna have to be honest. The future doesn’t look all that bright."[Sadness]
-"I don’t really know if there is a way to remedy this."[Sadness]
+Acacia: "The Sun, reversed. This represents the future."
+"Well, I’m gonna have to be honest. The future doesn’t look all that bright."
+"I don’t really know if there is a way to remedy this."
 
-Zuckerbork: "So that’s it then?"[Angry]
+Zuckerbork: "So that’s it then?"[Irritated]
 "You come into my office, you distract me from my work, make me play this childish game, all to tell me that my life’s work was for <b>nothing</b>?"[Angry]
 "I should eat you where you stand!"[Angry]
 
-Acacia: "Wait, no! That one is wrong!"[Fear]
-'Shit I messed up! I need to think carefully about the meaning of these cards…'[Fear]
+Acacia: "Wait, no! That one is wrong!"
+'Shit I messed up! I need to think carefully about the meaning of these cards…'
 

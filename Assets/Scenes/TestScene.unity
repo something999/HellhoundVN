@@ -827,7 +827,7 @@ RectTransform:
   - {fileID: 1725446096}
   - {fileID: 1841321955}
   m_Father: {fileID: 1390494118}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1289,7 +1289,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 741309036fc69af4a8c015e583f567f2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1531,7 +1531,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 5
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1665,6 +1665,7 @@ MonoBehaviour:
   back_button: {fileID: 232169748}
   chances: {fileID: 638827625}
   transition_screen: {fileID: 1294915369}
+  message: {fileID: 784247554}
   lose_message: '<b>An Unfortunate End</b>
 
     The odds were not in your favor...'
@@ -2230,7 +2231,7 @@ RectTransform:
   - {fileID: 1891124477}
   - {fileID: 1796121057}
   m_Father: {fileID: 1390494118}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2480,9 +2481,9 @@ RectTransform:
   - {fileID: 701777932}
   - {fileID: 1377154828}
   - {fileID: 173881823}
-  - {fileID: 1501777683}
   - {fileID: 638827626}
   - {fileID: 1294915368}
+  - {fileID: 1501777683}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2523,7 +2524,7 @@ RectTransform:
   - {fileID: 366997931}
   - {fileID: 799730091}
   m_Father: {fileID: 1390494118}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -2724,7 +2725,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1294915371}
-        m_MethodName: OnQuit
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

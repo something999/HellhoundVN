@@ -1,12 +1,12 @@
-Acacia: "The Sun, in the upright position. This card represents your past." [Neutral]
-"According to this card, you seemed to have had a pretty happy childhood!" [Happy]
-"I’m guessing this contributed to where you are now, am I right?" [Happy]
+Acacia: "The Sun, in the upright position. This card represents your past."
+"According to this card, you seemed to have had a pretty happy childhood!" 
+"I’m guessing this contributed to where you are now, am I right?"
 
 Zuckerbork: "..." [Neutral]
-"What kind of joke is this…?"[Angry]
-"I’m warning you right now, it’s in your best interest not to mock me or my past."[Angry]
-"Unless you want to end up as ground meat?" [Angry]
+"What kind of joke is this…?"[Irritated]
+"I’m warning you right now, it’s in your best interest not to mock me or my past."[Irritated]
+"Unless you want to end up as ground meat?" [Irritated]
 
-Acacia: "Ah! No, sir! Sorry, sir!" [Fear]
-'Shit I messed up! I need to think carefully about the meaning of these cards…'[Fear]
+Acacia: "Ah! No, sir! Sorry, sir!" 
+'Shit I messed up! I need to think carefully about the meaning of these cards…'
 

@@ -2,4 +2,4 @@ Zuckerbork: "Well it’s clear that you don’t actually have any ability in see
 "You’ve made late for my work with frivolous games and time wasters!"[Angry]
 "Fortunately for me, it’s my lunch break."[Happy]
 
- Acacia:'Ah, I’ve made too many mistakes! This is it!'[Fear]
+ Acacia:'Ah, I’ve made too many mistakes! This is it!'

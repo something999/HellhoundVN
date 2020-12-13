@@ -85,6 +85,7 @@ public class UIManager : MonoBehaviour
     public void ChangeCharacterImage(string character_path)
     {
         Sprite temp = Resources.Load<Sprite>(character_path);
+        if (temp == null) Debug.Log(character_path);
         AdjustImageWidth(temp, character_transform);
         character.sprite = temp;
     }

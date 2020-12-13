@@ -1,5 +1,8 @@
 CHANGELOG
 ---------------
+2020-12-13 11:18 PST
+- Added character images for Zuckerbork
+---------------
 2020-12-13 04:39 PST
 - Modified the opening transition to the first scene change (rather than the start of the game)
 - Modified transitions for cards
