@@ -1,5 +1,8 @@
 CHANGELOG
 ---------------
+2020-12-12 21:01
+- Fixed bug with project where buttons did not show up on-screen
+---------------
 2020-12-12 19:17 PST
 - Added ChoiceManager script to handle choice-specific tasks
 - Modified game manager to remove buttons & cards when they're not needed
