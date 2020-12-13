@@ -23,7 +23,6 @@ public class ChoiceManager : MonoBehaviour
     // private void CheckChoice(string choice)
     private IEnumerator CheckChoice(string choice)
     {
-        Debug.Log(choice + checkpoint);
         game.AddCommand("clear", "");
         game.AddCommand(resources.GetChoicePath(choice + checkpoint));  
         yield return StartCoroutine(game.PlayScene(game.GetCommands()));
