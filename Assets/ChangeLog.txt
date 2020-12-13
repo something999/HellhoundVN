@@ -3,6 +3,7 @@ CHANGELOG
 2020-12-13 00:54 PST
 - Added UI to display the number of chances the player has left before it is game over
 - Added transitions for the start and end of the game
+- Fixed a bug where the player could press on a button when they're not supposed to
 ---------------
 2020-12-13 00:15 PST
 - Added lose condition
