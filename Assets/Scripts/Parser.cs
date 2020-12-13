@@ -35,6 +35,7 @@ public class Parser : MonoBehaviour
     // I opted to make four separate regular expression groups instead one huge regular expression for readability
     private regular_expression[] regex_list = new regular_expression[]
         {
+            new regular_expression(new Regex("^CHOICE-(?'choice'.*)$", RegexOptions.Compiled), "choice"),
             new regular_expression(new Regex("^SCENE - (?'scene'.*)$", RegexOptions.Compiled), "scene"), // Background
             new regular_expression(new Regex("(?'character'.*?):", RegexOptions.Compiled), "character"), // Character
             new regular_expression(new Regex("(?!\\B\"[^\"]*)\\((?'position'.*)\\)(?![^\"]*\"\\B)", RegexOptions.Compiled), "position"), // Emotion (image for character)
