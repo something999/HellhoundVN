@@ -36,6 +36,7 @@ public class Parser : MonoBehaviour
     private regular_expression[] regex_list = new regular_expression[]
         {
             new regular_expression(new Regex("^(?'clear'CLEAR*)$", RegexOptions.Compiled), "clear"), // Used for clearing choices / ending cutscenes
+            new regular_expression(new Regex("^(?'transition'TRANSITION)$", RegexOptions.Compiled), "transition"), // Used for transitions
             new regular_expression(new Regex("^CHOICE-(?'choice'.*)$", RegexOptions.Compiled), "choice"), // Used for showing choices
             new regular_expression(new Regex("^SHOW-(?'show'.*)$", RegexOptions.Compiled), "show"), // Used for showing cutscenes
             new regular_expression(new Regex("^SCENE - (?'scene'.*)$", RegexOptions.Compiled), "scene"), // Background

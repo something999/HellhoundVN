@@ -5,7 +5,7 @@ Acacia: 'Ugh...my head…'[Disgust]
 'All of them are way too wild for me...'
 'Hey, wait a minute.'
 'Why do I feel so warm?'
-
+TRANSITION
 SCENE - OFFICE
 Acacia:"Woah, woah, woah!"
 "What is this?! Where am I?!"[Surprised]
@@ -69,7 +69,7 @@ Acacia: "I’ll read your fortune!"
 Zuckerbork: "....." [Neutral]
 "...Heheh" [Neutral]
 "Hahahaha." [Happy]
-"Aahahahahahahahahahahahah!" [Happy]
+"A-HAHAHAHAHAHAHA!" [Happy]
 "Fine, you’ve intrigued me runt" [Happy]
 "If you can provide satisfactory fortune, you get to leave." [Neutral]
 "If not, I’m going to have to take a lunch break." [Disgust]

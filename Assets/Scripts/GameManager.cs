@@ -39,7 +39,6 @@ public class GameManager : Parser
            "Assets/Resources/Texts/Acts/ZuckerborkPart5.txt"   
        };
        command_list = Parse(acts[checkpoint]);
-       command_list.Insert(1, new command("transition", ""));
        StartCoroutine(PlayScene(command_list));
     }
     
@@ -59,14 +58,14 @@ public class GameManager : Parser
                     StartCoroutine(cutscene_manager.PlayCutscene());
                     break;
                 case "transition":
-                    yield return StartCoroutine(ui.Fade(2f, true));
+                    yield return StartCoroutine(ui.PlayTransition(2f, true, false));
                     break;
                 case "ending":
-                    yield return StartCoroutine(ui.Fade(2f, false));
+                    yield return StartCoroutine(ui.PlayTransition(2f, false, true));
                     ui.ShowGameOver();
                     break;
                 case "victory":
-                    yield return StartCoroutine(ui.Fade(2f, false));
+                    yield return StartCoroutine(ui.PlayTransition(2f, false, true));
                     ui.ShowVictory();
                     break;
                 case "buttons":
@@ -76,10 +75,12 @@ public class GameManager : Parser
                     ShowChoices(c.arg, false);
                     break;                    
                 case "choice":
-                    ShowChoices(c.arg);
+                    ShowChoices(c.arg, true);
                     break;
                 case "move":
-                    ui.DisableCard(c.arg, false, true);
+                    if (checkpoint == 0) ui.DisableCard(c.arg, false, true, "Devil(Clone)");
+                    else if (checkpoint == 2) ui.DisableCard(c.arg, false, true, "Sun(Clone)");
+                    else ui.DisableCard(c.arg, false, true, "");
                     break;
                 case "scene": 
                     ui.ChangeBackgroundImage(resource_manager.GetBackgroundPath(c.arg));
@@ -139,10 +140,7 @@ public class GameManager : Parser
         {
             show_back = false;
         }
-        if (checkpoint == 3)
-        {
-            AddCommand("victory", "");
-        }
+
         return acts[checkpoint];
     }
     
@@ -155,7 +153,7 @@ public class GameManager : Parser
             choices[i] = resource_manager.GetButtonPath(choices[i]);
         }
         if (!enable) ui.ShowCards(true, choices, false);
-        else ui.ShowCards(true, choices);
+        else ui.ShowCards(true, choices, true);
     }
     
     // Clear the choice screens

@@ -1,5 +1,9 @@
 CHANGELOG
 ---------------
+2020-12-13 04:39 PST
+- Modified the opening transition to the first scene change (rather than the start of the game)
+- Modified transitions for cards
+---------------
 2020-12-13 03:41 PST
 - Added transitions
 - Modified UIManager to use less redundant code (but there's still some left)

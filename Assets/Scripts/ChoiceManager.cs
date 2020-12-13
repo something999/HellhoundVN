@@ -29,6 +29,7 @@ public class ChoiceManager : MonoBehaviour
         if (game.CheckAnswer(choice))
         {
             game.AddCommand(game.GetNextPart());
+            if (game.GetCheckpoint() == 3) game.AddCommand("victory", "");
             yield return StartCoroutine(game.PlayScene(game.GetCommands()));
         }
         else
