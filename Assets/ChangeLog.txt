@@ -1,5 +1,8 @@
 CHANGELOG
 ---------------
+2020-12-13 01:01 PST
+- Added the dialogue for when you fail to please Zuckerbork
+---------------
 2020-12-13 00:54 PST
 - Added UI to display the number of chances the player has left before it is game over
 - Added transitions for the start and end of the game

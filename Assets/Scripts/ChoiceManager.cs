@@ -24,7 +24,6 @@ public class ChoiceManager : MonoBehaviour
     private IEnumerator CheckChoice(string choice)
     {
         game.AddCommand("clear", "");
-        Debug.Log(choice);
         game.AddCommand(resources.GetChoicePath(choice + checkpoint));  
         yield return StartCoroutine(game.PlayScene(game.GetCommands()));
         if (game.CheckAnswer(choice))
@@ -36,6 +35,7 @@ public class ChoiceManager : MonoBehaviour
         {
             if (game.CheckStatus())
             {
+                game.AddCommand("Assets/Resources/Texts/Acts/ZuckerborkFailure.txt");
                 game.AddCommand("ending", "");
             }
             else game.AddCommand("choice", "Sun,Devil,Hermit");
