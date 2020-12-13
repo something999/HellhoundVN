@@ -1,5 +1,9 @@
 CHANGELOG
 ---------------
+2020-12-13 03:41 PST
+- Added transitions
+- Modified UIManager to use less redundant code (but there's still some left)
+---------------
 2020-12-13 02:35 PST
 - Added the win condition
 - Added all dialogue into the game

@@ -59,14 +59,14 @@ public class GameManager : Parser
                     StartCoroutine(cutscene_manager.PlayCutscene());
                     break;
                 case "transition":
-                    yield return StartCoroutine(ui.Fade(2f, false));
+                    yield return StartCoroutine(ui.Fade(2f, true));
                     break;
                 case "ending":
-                    yield return StartCoroutine(ui.Fade(2f, true));
+                    yield return StartCoroutine(ui.Fade(2f, false));
                     ui.ShowGameOver();
                     break;
                 case "victory":
-                    yield return StartCoroutine(ui.Fade(2f, true));
+                    yield return StartCoroutine(ui.Fade(2f, false));
                     ui.ShowVictory();
                     break;
                 case "buttons":
@@ -79,7 +79,7 @@ public class GameManager : Parser
                     ShowChoices(c.arg);
                     break;
                 case "move":
-                    ui.DisableCard(c.arg);
+                    ui.DisableCard(c.arg, false, true);
                     break;
                 case "scene": 
                     ui.ChangeBackgroundImage(resource_manager.GetBackgroundPath(c.arg));

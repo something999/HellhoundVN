@@ -36,24 +36,23 @@ public class UIManager : MonoBehaviour
         transition_screen.gameObject.SetActive(true);
         if (fadein)
         {
-            float elapsed = 0f; // How much time elapsed
-            while (elapsed < time)
-            {
-                elapsed += Time.deltaTime;
-                transition_screen.color = Color.Lerp(new Color(0f, 0f, 0f, 0f), Color.black, elapsed/time);
-                yield return null;
-            }
+            yield return Fade(transition_screen, time, Color.black, new Color (0f, 0f, 0f, 0f));
         }
         else
         {
-            float elapsed = 0f;
-            while (elapsed < time)
-            {
-                elapsed += Time.deltaTime;
-                transition_screen.color = Color.Lerp(Color.black, new Color(0f, 0f, 0f, 0f), elapsed/time);
-                yield return null;
-            }
-            transition_screen.gameObject.SetActive(false);
+            yield return Fade(transition_screen, time, new Color(0f, 0f, 0f, 0f), Color.black);
+        }
+        transition_screen.gameObject.SetActive(false);
+    }
+    
+    private IEnumerator Fade(Image image, float time, Color a, Color b)
+    {
+        float elapsed = 0f;
+        while (elapsed < time)
+        {
+            elapsed += Time.deltaTime;
+            image.color = Color.Lerp(a, b, elapsed/time);
+            yield return null;
         }
     }
     
@@ -120,7 +119,12 @@ public class UIManager : MonoBehaviour
                 card.transform.SetParent(cards.transform, false);
                 if (!enable)
                 {
+                    StartCoroutine(Fade(card.GetComponent<Image>(), .5f, Color.white, new Color(0f, 0f, 0f, 0f)));
                     card.enabled = false;
+                }
+                else
+                {
+                    StartCoroutine(Fade(card.GetComponent<Image>(), .5f, new Color(0f, 0f, 0f, 0f), Color.white));
                 }
             }
         }
@@ -130,8 +134,7 @@ public class UIManager : MonoBehaviour
             {
                 GameObject.Destroy(child.gameObject);
             }
-        }
-        cards.SetActive(display);
+        }    
     }
     
     // Reset all cards' states
@@ -140,23 +143,32 @@ public class UIManager : MonoBehaviour
         foreach (Transform child in cards.transform)
         {
             child.gameObject.SetActive(true);
+            StartCoroutine(Fade(child.GetComponent<Image>(), .5f, new Color(0f, 0f, 0f, 0f), Color.white));
             child.GetComponent<Button>().interactable = true;
             child.GetComponent<Button>().enabled = true;
         }
     }
     
-    // Disable a card
-    public void DisableCard(string name, bool active = false)
+    // Disable cards
+    public void DisableCard(string name, bool active, bool fade_active_card = false)
     {
         foreach (Transform child in cards.transform)
         {
             if (child.name != name)
             {
-                if (!active) child.gameObject.SetActive(false);
+                StartCoroutine(Fade(child.GetComponent<Image>(), .5f, Color.white, new Color(0f, 0f, 0f, 0f)));
+                if (!active) 
+                {
+                    child.gameObject.SetActive(false);
+                }
                 child.GetComponent<Button>().interactable = false;
             }
             else
             {
+                if (fade_active_card) 
+                {
+                    StartCoroutine(Fade(child.GetComponent<Image>(), .5f, new Color(0f, 0f, 0f, 0f), Color.white));
+                }
                 child.GetComponent<Button>().enabled = false;
             }
         }
