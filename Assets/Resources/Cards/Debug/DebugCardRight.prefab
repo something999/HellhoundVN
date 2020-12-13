@@ -143,5 +143,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card_name: hermit
-  explanation_standard: Assets/Resources/Texts/PlaceholderStandard.txt
-  explanation_reversed: Assets/Resources/Texts/PlaceholderFlipped.txt
+  explanation_standard: Assets/Resources/Texts/Debug/PlaceholderStandard.txt
+  explanation_reversed: Assets/Resources/Texts/Debug/PlaceholderFlipped.txt

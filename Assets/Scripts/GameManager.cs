@@ -9,20 +9,36 @@ using TMPro;
 public class GameManager : Parser
 {
     [SerializeField] private ResourceManager resource_manager = null; // Reference to the SpriteManager script
+    [SerializeField] private CutSceneManager cutscene_manager = null; // Reference to the SpriteManager script
     [SerializeField] private UIManager ui = null; // Reference to the UIManager script
-    [SerializeField] private string[] answers; // Answers at the various stages of the game
+    private string[] answers; // Answers at the various stages of the game
+    private string[] acts; // References to the script, which are meant to be executed in-order (excludes choices)
     private int checkpoint = 0; // Where in answers do we need to check
     
     public bool show_standard = true;
     public bool show_flipped = false;
     public string selected_card = "";
+    [SerializeField] private int chances = 3; // The number of chances the player has before it's game over
     
     private List<command> command_list;
      
     private void Start()
     {
        // command_list =Parse("Assets/Resources/Texts/SampleDialogue.txt"); 
-       command_list =Parse("Assets/Resources/Texts/ZuckerborkOpening.txt"); 
+       // command_list=Parse("Assets/Resources/Texts/ZuckerborkOpening.txt"); 
+       // StartCoroutine(PlayScene(command_list));
+       answers = new string[]
+       {
+           "devilupright"
+       };
+       acts = new string[]
+       {
+           "Assets/Resources/Texts/Debug/SampleDialogue.txt", 
+           "Assets/Resources/Texts/Acts/ZuckerborkPart3.txt"
+           //"Assets/Resources/Texts/Acts/ZuckerborkPart1.txt",
+           //"Assets/Resources/Texts/Acts/ZuckerborkPart2.txt"
+       };
+       command_list = Parse(acts[checkpoint]);
        StartCoroutine(PlayScene(command_list));
     }
     
@@ -38,14 +54,19 @@ public class GameManager : Parser
                 case "clear":
                     ClearChoices();
                     break;
+                case "cutscene":
+                    StartCoroutine(cutscene_manager.PlayCutscene());
+                    break;
                 case "buttons":
                     ui.ShowButtons(true, show_flipped);
                     break;
+                case "show":
+                    ShowChoices(c.arg, false);
+                    break;                    
                 case "choice":
                     ShowChoices(c.arg);
                     break;
                 case "move":
-                    GameObject.Find(c.arg).transform.localPosition = new Vector3(0f, 100f, 0f);
                     ui.DisableCard(c.arg);
                     break;
                 case "scene": 
@@ -94,15 +115,24 @@ public class GameManager : Parser
         command_list.AddRange(Parse(filepath));
     }
     
-    // Show all the available choices
-    private void ShowChoices(string line)
+    //Proceed to the next part
+    public string GetNextPart()
     {
+        checkpoint += 1;
+        return acts[checkpoint];
+    }
+    
+    // Show all the available choices
+    private void ShowChoices(string line, bool enable = true)
+    {
+        Debug.Log(line);
         string[] choices = line.Split(',');
         for (int i = 0; i < choices.Length; i++)
         {
             choices[i] = resource_manager.GetButtonPath(choices[i]);
         }
-        ui.ShowCards(true, choices);
+        if (!enable) ui.ShowCards(true, choices, false);
+        else ui.ShowCards(true, choices);
     }
     
     // Clear the choice screens
@@ -124,5 +154,10 @@ public class GameManager : Parser
     {
         ui.ResetCards();
         ui.ShowButtons(false, false);
+    }
+    
+    public bool CheckAnswer(string choice)
+    {
+        return choice.Equals(answers[checkpoint]);
     }
 }

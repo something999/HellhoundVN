@@ -50,24 +50,25 @@ public class UIManager : MonoBehaviour
             if (!is_thought) dialogue_text.text = new_speech;
             else 
             {
-                dialogue_text.text = "<i>" + new_speech + "</i>";
+                dialogue_text.text = "(" + new_speech + ")";
             }
             yield return null;
         } while (!Input.GetKeyDown(KeyCode.Mouse0));
     }
     
-    public void ShowCards(bool display, string[] cards_to_show=null)
+    public void ShowCards(bool display, string[] cards_to_show=null, bool enable=true)
     {
         if (display)
         {
-            int start_position = -375;
-            for (int i = 0; i < cards_to_show.Length; i++)
+            foreach(string c in cards_to_show)
             {
-                Button card = Instantiate(Resources.Load<Button>(cards_to_show[i]));
-                card.transform.parent = cards.transform;
-                card.GetComponent<RectTransform>().anchoredPosition = new Vector2(start_position + (375 * i), 100);
-                card.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
-            }  
+                Button card = Instantiate(Resources.Load<Button>(c));
+                card.transform.SetParent(cards.transform, false);
+                if (!enable)
+                {
+                    card.enabled = false;
+                }
+            }
         }
         else
         {
@@ -79,17 +80,13 @@ public class UIManager : MonoBehaviour
         cards.SetActive(display);
     }
     
-    // Redundant code for moving cards -- fix in future
     public void ResetCards()
     {
-        int start_position = -375;
-        //foreach (Transform child in cards.transform)
-        for (int i = 0; i < cards.transform.childCount; i++)
+        foreach (Transform child in cards.transform)
         {
-            cards.transform.GetChild(i).GetComponent<RectTransform>().anchoredPosition = new Vector2(start_position + (374 * i), 100);
-            cards.transform.GetChild(i).GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
-            cards.transform.GetChild(i).GetComponent<Button>().interactable = true;
-            cards.transform.GetChild(i).GetComponent<Button>().enabled = true;
+            child.gameObject.SetActive(true);
+            child.GetComponent<Button>().interactable = true;
+            child.GetComponent<Button>().enabled = true;
         }
     }
     
@@ -97,8 +94,15 @@ public class UIManager : MonoBehaviour
     {
         foreach (Transform child in cards.transform)
         {
-            if (child.name != name) child.GetComponent<Button>().interactable = false;
-            else child.GetComponent<Button>().enabled = false;
+            if (child.name != name)
+            {
+                child.gameObject.SetActive(false);
+                child.GetComponent<Button>().interactable = false;
+            }
+            else
+            {
+                child.GetComponent<Button>().enabled = false;
+            }
         }
     }
     

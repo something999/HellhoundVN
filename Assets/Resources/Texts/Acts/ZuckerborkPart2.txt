@@ -1,0 +1,79 @@
+SCENE - OFFICE
+Acacia:"Woahwoahwoah!"
+"What is this?! Where am I?!"[Surprised]
+"Is this an office? What even happened last night?"[Confused]
+
+???: “Ah it appears you are our newest arrival."[Neutral]
+"Ms.Acacia, it’s a pleasure to make you acquaintance."[Neutral]
+Zuckerbork: "I am Zuckerbork, resident hellhound of, you guessed it, Hell."[Neutral] 
+ 
+Acacia: "Ah, well, hello Mr.Zuckerbork, sir!" [Happy]
+"Quick question -- WHAT THE FUCK?"[Fear]
+"I can't be--? Unless I’m--? How are you--?"[Confused]
+"Am I….dead....?"[Fear]
+
+Zuckerbork: "In simple terms yes..."
+"But in complicated terms, no."[Neutral]
+"I could explain it to you, but it’s a lot of paperwork."[Neutral]
+"And I don’t have the time nor the patience to go through it all."[Disgust]
+"At any rate, let's proceed to the execution procedures."[Neutral]
+
+Acacia: "Wait a minute…'[Confused]
+"<b>EXECUTION???</b>"[Fear]
+
+Zuckerbork: "Ah, yes."
+"While the majority of the humans here are destined to do hard labor for the rest of their eternal existence, a select few are chosen to act as sustenance for us hounds and the other creatures of Hell."[Neutral]
+"What a lucky soul you are."
+"You get a quick, most painless end to your afterlife."[Happy]
+"You should be happy."
+"<b>Really happy.</b>"[Happy]
+
+Acacia: 'Oh my god. He’s actually going to eat me…'
+'I need to do something -- and quick!'
+"W-wait a second!"
+"What if I, uh, gave you something in exchange for not eating me?"
+
+ Zuckerbork: "...Listen here Ms.Acacia."[Neutral]
+"I am the richest hound in the entire underworld and a top ranking official at that."[Angry]
+"What do you have that I could ever possibly want?"[Angry]
+
+Acacia: "I could...um...uh..."
+'Come on, think!'
+"...read your fortune?"
+'....I’m dead.'
+
+Zuckerbork:"Fortune...?"[Confused]
+"Hahahah, perpawsterous!" [Disgust]
+"Childish magic tricks can't compete with reality, not even here in Hell." [Disgust]
+"Why don't I eat you right now and we can both get this over with?" [Neutral]
+"I have to release and update for Snoutbook in an hour and I would rather it not be late due to some crystal ball mumbo jumbo." [Neutral]
+
+Acacia: 'Shit, he’s not buying it!'
+'If I don't figure something out fast, I'm dog food.' 
+"H-hold on a sec!" 
+
+Zuckerbork: "Didn’t you just hear me? I would rather not be late so pipe down and-" [Angry]
+
+Acacia: "I’ll read your fortune!"
+"You talk big, but for a facts and logic guy you don’t seem to be able to back it up."
+"How about I prove it to you?"
+
+Zuckerbork: "....." [Neutral]
+"...Heheh" [Neutral]
+"Hahahaha." [Happy]
+"Aahahahahahahahahahahahah!" [Happy]
+"Fine, you’ve intrigued me runt" [Happy]
+"If you can provide satisfactory fortune, you get to leave." [Neutral]
+"If not, I’m going to have to take a lunch break." [Disgust]
+
+Acacia: 'Oh god….'
+
+Zuckerbork: "Alright, let’s get this dogwash over with."[Neutral]
+"I’m a very busy pooch as you know." [Neutral]
+
+Acacia: 'He doesn’t seem like he’ll be easily convinced…'
+'He’s a business dog right? Maybe instead of love his fortune could be prosperity?'
+'Yeah yeah, good plan Acacia!'
+"Alright let’s do this!"
+
+CHOICE-Sun,Devil,Hermit

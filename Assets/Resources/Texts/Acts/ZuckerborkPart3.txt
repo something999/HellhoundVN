@@ -1,0 +1,23 @@
+Acacia: 'Alright past done! This isn't too hard.'[Happy]
+'Wait a second…' [Confused]
+SHOW-Sun,Hermit
+'I....can’t work off these!' [Fear]
+'Their meanings are unrelated to what’s going on!' [Fear]
+'I’m screwed!' [Fear]
+CLEAR
+Zuckerbork: "Is something wrong Ms. Acacia?" [Neutral]
+"You seem to be a bit pale. Perhaps you’ve messed up your little magic trick?" [Happy]
+
+Acacia: "N-no it’s not that!"[Surprised]
+"It’s just...these cards have very interesting meanings!"[Fear]
+"It’ll just take me a bit to properly interpret them. I wanna give an accurate reading, ya know?"[Happy] 
+
+Zuckerbork: "..."[Netural]
+"Very well. Take your time I suppose…"[Neutral]
+
+Acacia: 'Shoot, if I don't think of something quick, I’m dead!' [Fear]
+'Wait a sec! I’ve been using all these cards in the upright position.'[Surprised]
+'What if I reverse them?' [Surprised]
+'If I reverse them, I can flip their definitions!' [Happy]
+'Genius, Acacia, genius!' [Happy]
+

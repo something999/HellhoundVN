@@ -1,0 +1,5 @@
+SCENE - DARK
+Acacia: "Ugh...my head…"[Disgust]
+"What even happened…?"[Disgust]
+"Last time I got to an astrology convention I swear. All of them are way to wild for me…"[Disgust]
+"Wait a minute, why do I feel so...warm?"[Confused]

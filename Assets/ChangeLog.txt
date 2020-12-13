@@ -1,5 +1,11 @@
 CHANGELOG
 ---------------
+2020-12-12 23:27 PST
+- Added functionality for checking cutscenes
+- Added card meanings (upright and reversed)
+- Added more of monnettie's dialogue
+- Added a cutscene manager for handling cutscenes (cards popping up on the screen)
+---------------
 2020-12-12 21:01
 - Fixed bug with project where buttons did not show up on-screen
 ---------------

@@ -26,5 +26,16 @@ public class ChoiceManager : MonoBehaviour
         game.AddCommand("clear", "");
         game.AddCommand(resources.GetChoicePath(choice + checkpoint));  
         yield return StartCoroutine(game.PlayScene(game.GetCommands()));
+        if (game.CheckAnswer(choice))
+        {
+            game.AddCommand(game.GetNextPart());
+            yield return StartCoroutine(game.PlayScene(game.GetCommands()));
+        }
+        else
+        {
+            game.AddCommand("choice", "Sun,Devil,Hermit");
+            yield return StartCoroutine(game.PlayScene(game.GetCommands()));
+            Debug.Log("incorrect");
+        }
     }
 }

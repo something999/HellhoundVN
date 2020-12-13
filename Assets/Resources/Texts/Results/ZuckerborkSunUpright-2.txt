@@ -1,0 +1,14 @@
+Acacia: "The Sun, in the upright position." [Neutral]
+"Well considering your childhood you must be pretty happy now!"[Happy]
+ "You have everything you’ve ever wanted and you’re living your best life!" [Happy]
+"What else is there to say?"[Happy]
+
+Zuckerbork: "..." [Neutral]
+"Have you ever heard the saying ‘money can’t buy happiness?’"[Sadness]
+
+Acacia: "Huh? Are you saying...?" [Confused]
+
+Zuckerbork: "Don’t assume you have all the facts." [Angry]
+"Success isn’t always so glamorous. I suggest you reevaluate your perspective."[Angry]
+
+Acacia: 'Shit I messed up! I need to think carefully about the meaning of these cards…'[Fear]

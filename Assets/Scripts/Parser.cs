@@ -35,13 +35,15 @@ public class Parser : MonoBehaviour
     // I opted to make four separate regular expression groups instead one huge regular expression for readability
     private regular_expression[] regex_list = new regular_expression[]
         {
-            new regular_expression(new Regex("^CHOICE-(?'choice'.*)$", RegexOptions.Compiled), "choice"),
+            new regular_expression(new Regex("^(?'clear'CLEAR*)$", RegexOptions.Compiled), "clear"), // Used for clearing choices / ending cutscenes
+            new regular_expression(new Regex("^CHOICE-(?'choice'.*)$", RegexOptions.Compiled), "choice"), // Used for showing choices
+            new regular_expression(new Regex("^SHOW-(?'show'.*)$", RegexOptions.Compiled), "show"), // Used for showing cutscenes
             new regular_expression(new Regex("^SCENE - (?'scene'.*)$", RegexOptions.Compiled), "scene"), // Background
             new regular_expression(new Regex("(?'character'.*?):", RegexOptions.Compiled), "character"), // Character
             new regular_expression(new Regex("(?!\\B\"[^\"]*)\\((?'position'.*)\\)(?![^\"]*\"\\B)", RegexOptions.Compiled), "position"), // Emotion (image for character)
             new regular_expression(new Regex("(?!\\B\"[^\"]*)\\[(?'emotion'.*)\\](?![^\"]*\"\\B)", RegexOptions.Compiled), "emotion"), // Emotion (image for character)
-            new regular_expression(new Regex("(“|\")(?'dialogue'.*)(”|\")", RegexOptions.Compiled), "dialogue"), // Dialogue
-            new regular_expression(new Regex("(‘|\')(?'thought'.*)(’|\')", RegexOptions.Compiled), "thought") // Dialogue
+            new regular_expression(new Regex("\"(?'dialogue'.*)\"", RegexOptions.Compiled), "dialogue"), // Dialogue
+            new regular_expression(new Regex("\'(?'thought'.*)\'", RegexOptions.Compiled), "thought") // Dialogue
         };
     
     // Parses the instructions written in the filepath
