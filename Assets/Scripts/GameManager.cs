@@ -17,6 +17,7 @@ public class GameManager : Parser
     
     public bool show_standard = true;
     public bool show_flipped = false;
+    private bool show_back = true;
     public string selected_card = "";
     [SerializeField] private int chances = 3; // The number of chances the player has before it's game over
     
@@ -26,17 +27,19 @@ public class GameManager : Parser
     {
        answers = new string[]
        {
-           "Devilupright"
+           "Devilupright",
+           "Hermitflipped",
+           "Sunupright"
        };
        acts = new string[]
        {
-           "Assets/Resources/Texts/Debug/SampleDialogue.txt", 
-           "Assets/Resources/Texts/Acts/ZuckerborkPart3.txt"
-           //"Assets/Resources/Texts/Acts/ZuckerborkPart1.txt",
-           //"Assets/Resources/Texts/Acts/ZuckerborkPart2.txt"
+           "Assets/Resources/Texts/Acts/ZuckerborkPart1.txt",
+           "Assets/Resources/Texts/Acts/ZuckerborkPart3.txt",
+           "Assets/Resources/Texts/Acts/ZuckerborkPart4.txt",
+           "Assets/Resources/Texts/Acts/ZuckerborkPart5.txt"   
        };
        command_list = Parse(acts[checkpoint]);
-       command_list.Insert(2, new command("transition", ""));
+       command_list.Insert(1, new command("transition", ""));
        StartCoroutine(PlayScene(command_list));
     }
     
@@ -62,8 +65,12 @@ public class GameManager : Parser
                     yield return StartCoroutine(ui.Fade(2f, true));
                     ui.ShowGameOver();
                     break;
+                case "victory":
+                    yield return StartCoroutine(ui.Fade(2f, true));
+                    ui.ShowVictory();
+                    break;
                 case "buttons":
-                    ui.ShowButtons(true, show_flipped);
+                    ui.ShowButtons(true, show_flipped, show_back);
                     break;
                 case "show":
                     ShowChoices(c.arg, false);
@@ -124,6 +131,18 @@ public class GameManager : Parser
     public string GetNextPart()
     {
         checkpoint += 1;
+        if (checkpoint == 1)
+        {
+            show_flipped = true;
+        }
+        if (checkpoint == 2)
+        {
+            show_back = false;
+        }
+        if (checkpoint == 3)
+        {
+            AddCommand("victory", "");
+        }
         return acts[checkpoint];
     }
     
@@ -143,14 +162,15 @@ public class GameManager : Parser
     public void ClearChoices()
     {
         ui.ShowCards(false);
-        ui.ShowButtons(false, false);
+        ui.ShowButtons(false, false, false);
     }
     
     public IEnumerator PlayChoice()
     {
        yield return StartCoroutine(PlayScene(command_list));  
        AddCommand("character", "Acacia");
-       AddCommand("thought", "Should I present this card?");
+       if (checkpoint < 2) AddCommand("thought", "Should I present this card?");
+       else AddCommand("thought", "Should I present this card upright or reversed?");
        AddCommand("buttons", "");
        yield return StartCoroutine(PlayScene(command_list));
     }
@@ -158,7 +178,7 @@ public class GameManager : Parser
     public void ReshowCards()
     {
         ui.ResetCards();
-        ui.ShowButtons(false, false);
+        ui.ShowButtons(false, show_flipped, show_back);
     }
     
     public bool CheckAnswer(string choice)
@@ -171,5 +191,10 @@ public class GameManager : Parser
         chances -= 1;
         ui.RemoveChance();
         return chances == 0;
+    }
+    
+    public int GetCheckpoint()
+    {
+        return checkpoint;
     }
 }

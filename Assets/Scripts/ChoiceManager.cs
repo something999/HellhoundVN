@@ -8,7 +8,7 @@ public class ChoiceManager : MonoBehaviour
     [SerializeField] private GameManager game;
     [SerializeField] private ResourceManager resources;
     [SerializeField] private string[] answers;
-    int checkpoint = 0;
+    // int checkpoint = 0;
     
     public void SetChoiceStandard()
     {
@@ -24,7 +24,7 @@ public class ChoiceManager : MonoBehaviour
     private IEnumerator CheckChoice(string choice)
     {
         game.AddCommand("clear", "");
-        game.AddCommand(resources.GetChoicePath(choice + checkpoint));  
+        game.AddCommand(resources.GetChoicePath(choice + game.GetCheckpoint()));  
         yield return StartCoroutine(game.PlayScene(game.GetCommands()));
         if (game.CheckAnswer(choice))
         {

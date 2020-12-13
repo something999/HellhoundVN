@@ -1,4 +1,4 @@
-Acacia: 'Alright past done! This isn't too hard.'[Happy]
+Acacia: 'Alright past done! This isn't too hard. Now to do the present.'[Happy]
 'Wait a second…' [Confused]
 SHOW-Sun,Hermit
 'Happiness and isolation? I can’t work off these!' [Fear]
@@ -21,3 +21,4 @@ Acacia: 'Shoot, if I don't think of something quick, I’m dead!' [Fear]
 'If I reverse them, I can flip their definitions!' [Happy]
 'Genius, Acacia, genius!' [Happy]
 
+CHOICE-Sun,Hermit

@@ -16,9 +16,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogue_text = null; // Place where the character's speech goes
     [SerializeField] private GameObject buttons = null; // Choice buttons
     [SerializeField] private GameObject flipped_button = null; // The button choice for displaying flipped choices
+    [SerializeField] private GameObject back_button = null; // The button choice for displaying flipped choices
     [SerializeField] private GameObject chances = null; // UI that displays chances
     [SerializeField] private Image transition_screen = null; 
-    
+    [SerializeField] private TextMeshProUGUI message = null;
+    [SerializeField] private string lose_message = "<b>An Unfortunate End</b>\nThe odds were not in your favor...";
+    [SerializeField] private string win_message = "<b>Fortune Favors the Bold</b>\nCongratulations!\nZuckerbork enjoyed your reading.";
     [SerializeField] private int reference_width = 1600; // How wide the image is for a base 16:9 resolution
     [SerializeField] private int reference_height = 840; // How high the image can be for a base 16:9 resolution
     
@@ -56,10 +59,18 @@ public class UIManager : MonoBehaviour
     
     public void ShowGameOver()
     {
+        message.text = lose_message;
         foreach (Transform child in transition_screen.transform)
         {
             child.gameObject.SetActive(true);
         }
+    }
+    
+    public void ShowVictory()
+    {
+        message.text = win_message;
+        transition_screen.transform.GetChild(0).gameObject.SetActive(true);
+        transition_screen.transform.GetChild(transition_screen.transform.childCount-1).gameObject.SetActive(true);
     }
     
     // Swap image for background
@@ -98,6 +109,7 @@ public class UIManager : MonoBehaviour
         } while (!Input.GetKeyDown(KeyCode.Mouse0));
     }
     
+    // Show the card UI
     public void ShowCards(bool display, string[] cards_to_show=null, bool enable=true)
     {
         if (display)
@@ -122,6 +134,7 @@ public class UIManager : MonoBehaviour
         cards.SetActive(display);
     }
     
+    // Reset all cards' states
     public void ResetCards()
     {
         foreach (Transform child in cards.transform)
@@ -132,6 +145,7 @@ public class UIManager : MonoBehaviour
         }
     }
     
+    // Disable a card
     public void DisableCard(string name, bool active = false)
     {
         foreach (Transform child in cards.transform)
@@ -148,12 +162,12 @@ public class UIManager : MonoBehaviour
         }
     }
     
-    public void ShowButtons(bool display_buttons, bool display_flipped_button)
+    // Show buttons UI
+    public void ShowButtons(bool display_buttons, bool display_flipped_button, bool display_back_button)
     {
-        if (display_flipped_button) flipped_button.SetActive(true);
-        else flipped_button.SetActive(false);
-        if (display_buttons) buttons.SetActive(true);
-        else buttons.SetActive(false);
+        flipped_button.SetActive(display_flipped_button);
+        back_button.SetActive(display_back_button);
+        buttons.SetActive(display_buttons);
     }
     
     public void ResetAll()

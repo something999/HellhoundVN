@@ -37,6 +37,12 @@ public class ResourceManager : MonoBehaviour
             {"Devilupright0", "Assets/Resources/Texts/Results/ZuckerborkDevilUpright-1.txt"}, // Devil upright - Part 1
             {"Sunupright0", "Assets/Resources/Texts/Results/ZuckerborkSunUpright-1.txt"}, // Sun upright - Part 1
             {"Hermitupright0", "Assets/Resources/Texts/Results/ZuckerborkHermitUpright-1.txt"}, // Hermit upright - Part 1
+            {"Hermitupright1", "Assets/Resources/Texts/Results/ZuckerborkHermitUpright-2.txt"}, // Hermit upright - Part 2
+            {"Hermitflipped1", "Assets/Resources/Texts/Results/ZuckerborkHermitReversed-1.txt"}, // Hermit reversed - Part 2
+            {"Sunupright1", "Assets/Resources/Texts/Results/ZuckerborkSunUpright-2.txt"}, // Sun upright - Part 2
+            {"Sunflipped1", "Assets/Resources/Texts/Results/ZuckerborkSunReversed-1.txt"}, // Sun reversed - Part 2
+            {"Sunupright2", "Assets/Resources/Texts/Results/ZuckerborkSunUpright-3.txt"}, // Sun upright - Part 3
+            {"Sunflipped2", "Assets/Resources/Texts/Results/ZuckerborkSunReversed-2.txt"} // Sun reversed - Part 3
         };
     }
     

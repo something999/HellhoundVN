@@ -1,5 +1,9 @@
 CHANGELOG
 ---------------
+2020-12-13 02:35 PST
+- Added the win condition
+- Added all dialogue into the game
+---------------
 2020-12-13 01:01 PST
 - Added the dialogue for when you fail to please Zuckerbork
 ---------------
