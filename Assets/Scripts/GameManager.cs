@@ -29,12 +29,15 @@ public class GameManager : Parser
     /*
         Read the list of commands and execute the instructions
     */
-    private IEnumerator PlayScene(List<command> command_list)
+    public IEnumerator PlayScene(List<command> command_list)
     {
         foreach (command c in command_list)
         {
             switch (c.type)
             {
+                case "clear":
+                    ClearChoices();
+                    break;
                 case "buttons":
                     ui.ShowButtons(true, show_flipped);
                     break;
@@ -68,6 +71,11 @@ public class GameManager : Parser
         ClearCommands();
     }
     
+    public List<command> GetCommands()
+    {
+        return command_list;
+    }
+    
     // Empty the command list
     public void ClearCommands()
     {
@@ -97,34 +105,19 @@ public class GameManager : Parser
         ui.ShowCards(true, choices);
     }
     
+    // Clear the choice screens
+    public void ClearChoices()
+    {
+        ui.ShowCards(false);
+        ui.ShowButtons(false, false);
+    }
+    
     public IEnumerator PlayChoice()
     {
        yield return StartCoroutine(PlayScene(command_list));  
        AddCommand("dialogue", "Should I present this card?");
        AddCommand("buttons", "");
        yield return StartCoroutine(PlayScene(command_list));
-    }
-    
-    public void CheckChoiceUpright()
-    {
-        Debug.Log(selected_card + " upright" == answers[checkpoint]);
-    }
-    
-    public void CheckChoiceFlipped()
-    {
-        Debug.Log(selected_card + " flipped" == answers[checkpoint]);
-    }
-    
-    private void PlaySuccessMessage()
-    {
-        if (checkpoint == 0)
-        {
-            
-        }
-    }
-    
-    private void PlayFailureMessage()
-    {
     }
     
     public void ReshowCards()

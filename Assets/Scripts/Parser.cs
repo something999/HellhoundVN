@@ -40,8 +40,8 @@ public class Parser : MonoBehaviour
             new regular_expression(new Regex("(?'character'.*?):", RegexOptions.Compiled), "character"), // Character
             new regular_expression(new Regex("(?!\\B\"[^\"]*)\\((?'position'.*)\\)(?![^\"]*\"\\B)", RegexOptions.Compiled), "position"), // Emotion (image for character)
             new regular_expression(new Regex("(?!\\B\"[^\"]*)\\[(?'emotion'.*)\\](?![^\"]*\"\\B)", RegexOptions.Compiled), "emotion"), // Emotion (image for character)
-            new regular_expression(new Regex("\"(?'dialogue'.*)\"", RegexOptions.Compiled), "dialogue"), // Dialogue
-            new regular_expression(new Regex("\'(?'thought'.*)\'", RegexOptions.Compiled), "thought") // Dialogue
+            new regular_expression(new Regex("(“|\")(?'dialogue'.*)(”|\")", RegexOptions.Compiled), "dialogue"), // Dialogue
+            new regular_expression(new Regex("(‘|\')(?'thought'.*)(’|\')", RegexOptions.Compiled), "thought") // Dialogue
         };
     
     // Parses the instructions written in the filepath

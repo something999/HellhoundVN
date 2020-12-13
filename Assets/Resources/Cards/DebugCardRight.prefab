@@ -142,6 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f22f567ff617454090fae5f5b401cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card_name: DEBUG
+  card_name: hermit
   explanation_standard: Assets/Resources/Texts/PlaceholderStandard.txt
   explanation_reversed: Assets/Resources/Texts/PlaceholderFlipped.txt

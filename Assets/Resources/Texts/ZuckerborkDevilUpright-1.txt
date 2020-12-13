@@ -1,27 +1,27 @@
-Acacia: “The Devil, in the upright position. This card represents your past.” [Neutral]
-“Tell me Mr.Zuckerbork, did you have a lot growing up?” [Neutral]
+Acacia: "The Devil, in the upright position. This card represents your past." [Neutral]
+"Tell me Mr.Zuckerbork, did you have a lot growing up?" [Neutral]
 
-Zuckerbork:”What do you mean?” [Confused]
+Zuckerbork: "What do you mean?" [Confused]
 
-Acacia: “Well the Devil card represents attachment to material things.” [Neural]
-“Since this is your past card, I’m assuming money played some kind of factor in your childhood.”[Confused]
+Acacia: "Well the Devil card represents attachment to material things." [Neutral]
+"Since this is your past card, I’m assuming money played some kind of factor in your childhood."[Confused]
 
-Zuckerbork:”......”[Neutral]
-“I was the runt of my litter…”[Neutral]
-“They deemed me useless and thus I was thrown away with the others like me.”[Sadness]
-“We were barely given so much as a glance. Let alone these “material things” you keep yapping about.” [Angry]
- “...It’s not like it matters much anymore.”
-“Now I’m part of the top dog security here in Hell, and I’m rich enough to buy every hound in hell a new squeaker twice.” [Angry]
-“I showed them…” [Neutral]
+Zuckerbork: "......" [Neutral]
+"I was the runt of my litter…" [Neutral]
+"They deemed me useless and thus I was thrown away with the others like me." [Sadness]
+"We were barely given so much as a glance. Let alone these “material things” you keep yapping about." [Angry]
+"...It’s not like it matters much anymore."
+"Now I’m part of the top dog security here in Hell, and I’m rich enough to buy every hound in hell a new squeaker twice." [Angry]
+"I showed them…" [Neutral]
 
-Acacia: ‘Woah...I thought rich people struggling was just a thing that happened in movies…’ [Surprised]
-‘I guess capitalism works differently in Hell.’ [Confused]
-“It must’ve been hard for you...I’m so sorry.” [Sadness]
-“This card seems to represent your struggle with having nothing.” [Neutral]
-“From that you had work hard and climb your way to the top, leading us to the now.”[Neutral]
-“Am I right?” [Confused]
+Acacia: 'Woah...I thought rich people struggling was just a thing that happened in movies…' [Surprised]
+'I guess capitalism works differently in Hell.' [Confused]
+"It must’ve been hard for you...I’m so sorry." [Sadness]
+"This card seems to represent your struggle with having nothing." [Neutral]
+"From that you had work hard and climb your way to the top, leading us to the now." [Neutral]
+"Am I right?" [Confused]
 
-Zuckerbork: “Yes, that is correct…” [Neutral]
-“Shall we move on? I’d rather not dwell on the past too much…”[Sadness]
+Zuckerbork: "Yes, that is correct…" [Neutral]
+"Shall we move on? I’d rather not dwell on the past too much…" [Sadness]
 
-Acacia: “Of course....”[Sadness]
+Acacia: "Of course...." [Sadness]

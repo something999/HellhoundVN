@@ -1,5 +1,11 @@
 CHANGELOG
 ---------------
+2020-12-12 19:17 PST
+- Added ChoiceManager script to handle choice-specific tasks
+- Modified game manager to remove buttons & cards when they're not needed
+- Modified ResourcesManager to hold references to choice-specific files
+- Modified choice system to display results after making a choice
+---------------
 2020-12-12 18:10 PST
 - Added prototype choice system
 - Added a UI for the buttons
