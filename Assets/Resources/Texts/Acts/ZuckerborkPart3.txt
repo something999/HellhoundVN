@@ -1,7 +1,7 @@
 Acacia: 'Alright past done! This isn't too hard.'[Happy]
 'Wait a second…' [Confused]
 SHOW-Sun,Hermit
-'I....can’t work off these!' [Fear]
+'Happiness and isolation? I can’t work off these!' [Fear]
 'Their meanings are unrelated to what’s going on!' [Fear]
 'I’m screwed!' [Fear]
 CLEAR

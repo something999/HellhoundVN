@@ -26,6 +26,7 @@ public class Card : MonoBehaviour
     
     public void ReadMeaning()
     {
+        GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>().DisableCard(card_name+"(Clone)", true);
         game.selected_card = card_name;
         game.AddCommand("character", "Acacia");
         if (game.show_standard)

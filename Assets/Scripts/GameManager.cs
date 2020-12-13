@@ -24,12 +24,9 @@ public class GameManager : Parser
      
     private void Start()
     {
-       // command_list =Parse("Assets/Resources/Texts/SampleDialogue.txt"); 
-       // command_list=Parse("Assets/Resources/Texts/ZuckerborkOpening.txt"); 
-       // StartCoroutine(PlayScene(command_list));
        answers = new string[]
        {
-           "devilupright"
+           "Devilupright"
        };
        acts = new string[]
        {
@@ -39,6 +36,7 @@ public class GameManager : Parser
            //"Assets/Resources/Texts/Acts/ZuckerborkPart2.txt"
        };
        command_list = Parse(acts[checkpoint]);
+       command_list.Insert(2, new command("transition", ""));
        StartCoroutine(PlayScene(command_list));
     }
     
@@ -54,8 +52,15 @@ public class GameManager : Parser
                 case "clear":
                     ClearChoices();
                     break;
-                case "cutscene":
+                case "cutscene": // Meant for card cutscenes, not fade-ins
                     StartCoroutine(cutscene_manager.PlayCutscene());
+                    break;
+                case "transition":
+                    yield return StartCoroutine(ui.Fade(2f, false));
+                    break;
+                case "ending":
+                    yield return StartCoroutine(ui.Fade(2f, true));
+                    ui.ShowGameOver();
                     break;
                 case "buttons":
                     ui.ShowButtons(true, show_flipped);
@@ -125,7 +130,6 @@ public class GameManager : Parser
     // Show all the available choices
     private void ShowChoices(string line, bool enable = true)
     {
-        Debug.Log(line);
         string[] choices = line.Split(',');
         for (int i = 0; i < choices.Length; i++)
         {
@@ -145,7 +149,8 @@ public class GameManager : Parser
     public IEnumerator PlayChoice()
     {
        yield return StartCoroutine(PlayScene(command_list));  
-       AddCommand("dialogue", "Should I present this card?");
+       AddCommand("character", "Acacia");
+       AddCommand("thought", "Should I present this card?");
        AddCommand("buttons", "");
        yield return StartCoroutine(PlayScene(command_list));
     }
@@ -159,5 +164,12 @@ public class GameManager : Parser
     public bool CheckAnswer(string choice)
     {
         return choice.Equals(answers[checkpoint]);
+    }
+    
+    public bool CheckStatus()
+    {
+        chances -= 1;
+        ui.RemoveChance();
+        return chances == 0;
     }
 }

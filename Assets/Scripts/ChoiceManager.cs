@@ -24,6 +24,7 @@ public class ChoiceManager : MonoBehaviour
     private IEnumerator CheckChoice(string choice)
     {
         game.AddCommand("clear", "");
+        Debug.Log(choice);
         game.AddCommand(resources.GetChoicePath(choice + checkpoint));  
         yield return StartCoroutine(game.PlayScene(game.GetCommands()));
         if (game.CheckAnswer(choice))
@@ -33,9 +34,12 @@ public class ChoiceManager : MonoBehaviour
         }
         else
         {
-            game.AddCommand("choice", "Sun,Devil,Hermit");
+            if (game.CheckStatus())
+            {
+                game.AddCommand("ending", "");
+            }
+            else game.AddCommand("choice", "Sun,Devil,Hermit");
             yield return StartCoroutine(game.PlayScene(game.GetCommands()));
-            Debug.Log("incorrect");
         }
     }
 }

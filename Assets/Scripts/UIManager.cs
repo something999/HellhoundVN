@@ -15,10 +15,52 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI header_text = null; // Place where the character's name goes
     [SerializeField] private TextMeshProUGUI dialogue_text = null; // Place where the character's speech goes
     [SerializeField] private GameObject buttons = null; // Choice buttons
-    [SerializeField] private GameObject flipped_button = null; 
+    [SerializeField] private GameObject flipped_button = null; // The button choice for displaying flipped choices
+    [SerializeField] private GameObject chances = null; // UI that displays chances
+    [SerializeField] private Image transition_screen = null; 
     
     [SerializeField] private int reference_width = 1600; // How wide the image is for a base 16:9 resolution
     [SerializeField] private int reference_height = 840; // How high the image can be for a base 16:9 resolution
+    
+    public void RemoveChance()
+    {
+        Destroy(chances.transform.GetChild(chances.transform.childCount - 1).gameObject);
+    }
+    
+    // Fade in or fade out the game over screen
+    public IEnumerator Fade(float time, bool fadein)
+    {
+        transition_screen.gameObject.SetActive(true);
+        if (fadein)
+        {
+            float elapsed = 0f; // How much time elapsed
+            while (elapsed < time)
+            {
+                elapsed += Time.deltaTime;
+                transition_screen.color = Color.Lerp(new Color(0f, 0f, 0f, 0f), Color.black, elapsed/time);
+                yield return null;
+            }
+        }
+        else
+        {
+            float elapsed = 0f;
+            while (elapsed < time)
+            {
+                elapsed += Time.deltaTime;
+                transition_screen.color = Color.Lerp(Color.black, new Color(0f, 0f, 0f, 0f), elapsed/time);
+                yield return null;
+            }
+            transition_screen.gameObject.SetActive(false);
+        }
+    }
+    
+    public void ShowGameOver()
+    {
+        foreach (Transform child in transition_screen.transform)
+        {
+            child.gameObject.SetActive(true);
+        }
+    }
     
     // Swap image for background
     public void ChangeBackgroundImage(string background_path)
@@ -90,13 +132,13 @@ public class UIManager : MonoBehaviour
         }
     }
     
-    public void DisableCard(string name)
+    public void DisableCard(string name, bool active = false)
     {
         foreach (Transform child in cards.transform)
         {
             if (child.name != name)
             {
-                child.gameObject.SetActive(false);
+                if (!active) child.gameObject.SetActive(false);
                 child.GetComponent<Button>().interactable = false;
             }
             else
@@ -130,6 +172,5 @@ public class UIManager : MonoBehaviour
     private void AdjustImageWidth(Sprite sprite, RectTransform transform)
     {
         transform.sizeDelta = new Vector2 ((reference_height*sprite.rect.width) / sprite.rect.height, reference_height);
-        //new Vector2((reference_width*sprite.rect.width) / sprite.rect.width, reference_height);
     }
 }

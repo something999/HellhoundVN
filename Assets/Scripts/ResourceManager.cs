@@ -26,17 +26,17 @@ public class ResourceManager : MonoBehaviour
         paths_to_cards = new Dictionary<string, string>()
         {
             {"DEBUG", "Cards/Debug/DebugCardCenter"},
-            {"Sun", "Cards/Debug/DebugCardLeft"},
-            {"Devil", "Cards/Debug/DebugCardCenter"},
-            {"Hermit", "Cards/Debug/DebugCardRight"},
+            {"Sun", "Cards/Sun"},
+            {"Devil", "Cards/Devil"},
+            {"Hermit", "Cards/Hermit"},
         };
         
          paths_to_choice_results = new Dictionary<string, string>()
         {
             {"DEBUG", ""},
-            {"devilupright0", "Assets/Resources/Texts/Results/ZuckerborkDevilUpright-1.txt"}, // Devil upright - Part 1
-            {"sunupright0", "Assets/Resources/Texts/Results/ZuckerborkSunUpright-1.txt"}, // Sun upright - Part 1
-            {"hermitupright0", "Assets/Resources/Texts/Results/ZuckerborkHermitUpright-1.txt"}, // Hermit upright - Part 1
+            {"Devilupright0", "Assets/Resources/Texts/Results/ZuckerborkDevilUpright-1.txt"}, // Devil upright - Part 1
+            {"Sunupright0", "Assets/Resources/Texts/Results/ZuckerborkSunUpright-1.txt"}, // Sun upright - Part 1
+            {"Hermitupright0", "Assets/Resources/Texts/Results/ZuckerborkHermitUpright-1.txt"}, // Hermit upright - Part 1
         };
     }
     
