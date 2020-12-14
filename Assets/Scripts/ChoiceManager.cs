@@ -39,7 +39,12 @@ public class ChoiceManager : MonoBehaviour
                 game.AddCommand("Texts/Acts/ZuckerborkFailure.txt");
                 game.AddCommand("ending", "");
             }
-            else game.AddCommand("choice", "Sun,Devil,Hermit");
+            else
+            {
+                if (game.GetCheckpoint() == 0) game.AddCommand("choice", "Sun,Devil,Hermit");
+                else if (game.GetCheckpoint() == 1) game.AddCommand("choice", "Sun,Hermit");
+                else game.AddCommand("choice","Sun");
+            }
             yield return StartCoroutine(game.PlayScene(game.GetCommands()));
         }
     }

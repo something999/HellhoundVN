@@ -11,7 +11,7 @@ public class GameManager : Parser
     [SerializeField] private ResourceManager resource_manager = null; // Reference to the SpriteManager script
     [SerializeField] private CutSceneManager cutscene_manager = null; // Reference to the SpriteManager script
     [SerializeField] private UIManager ui = null; // Reference to the UIManager script
-    private string[] answers; // Answers at the various stages of the game
+    private string[] answers; // <-- Preface this line with [SerializeField] to edit this from the Inspector
     private string[] acts; // References to the script, which are meant to be executed in-order (excludes choices)
     private int checkpoint = 0; // Where in answers do we need to check
     
@@ -30,6 +30,7 @@ public class GameManager : Parser
            "Devilupright",
            "Hermitflipped",
            "Sunupright"
+           // Insert new answers here
        };
        acts = new string[]
        {
