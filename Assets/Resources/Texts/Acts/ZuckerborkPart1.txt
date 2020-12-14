@@ -5,8 +5,8 @@ Acacia: 'Ugh...my head…'
 'All of them are way too wild for me...'
 'Hey, wait a minute.'
 'Why do I feel so warm?'
-TRANSITION
 SCENE - OFFICE
+TRANSITION
 Acacia:"Woah, woah, woah!"
 "What is this?! Where am I?!"
 "Is this an office? What even happened last night?"

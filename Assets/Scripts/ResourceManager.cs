@@ -14,7 +14,9 @@ public class ResourceManager : MonoBehaviour
     {
         paths_to_backgrounds = new Dictionary<string, string>() 
         {
-            {"DEBUG", "Sprites/Debug/DebugBackground"}
+            {"DEBUG", "Sprites/Debug/DebugBackground"},
+            {"DARK", "Sprites/Backgrounds/Dark"},
+            {"OFFICE", "Sprites/Backgrounds/Office"},
         };
         
         paths_to_characters = new Dictionary<string, string>()
