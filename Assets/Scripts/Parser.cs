@@ -51,10 +51,6 @@ public class Parser : MonoBehaviour
     public List<command> Parse(string filepath)
     {
         TextAsset TextDialogue = Resources.Load<TextAsset>(filepath);
-<<<<<<< HEAD
-=======
-        Debug.Log(filepath);
->>>>>>> 71388fdcd6af398c5f28a9a35493242ef560d77d
         string[] TextLines = TextDialogue.text.Split(System.Environment.NewLine.ToCharArray());
 
         List<command> command_list = new List<command>();
@@ -63,10 +59,6 @@ public class Parser : MonoBehaviour
                 foreach (regular_expression r in regex_list)
                 {
                     RecordRegexMatch(LineCurrent, r.pattern, r.group_name, command_list);
-<<<<<<< HEAD
-=======
-                    // CheckCommand(cmd, command_list);
->>>>>>> 71388fdcd6af398c5f28a9a35493242ef560d77d
                 }
             }
         }
