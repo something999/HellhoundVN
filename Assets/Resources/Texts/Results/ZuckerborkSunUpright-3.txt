@@ -7,4 +7,4 @@ Acacia:"The Sun, in the upright position. This represents the future."
  Zuckerbork: "I see."[Neutral]
 "Deep down, I knew I wasn’t happy with my work, but it took someone else saying it for me to realize it."[Neutral]
 "It appears I’ve been proven wrong with this fortune telling business. Congratulations Ms.Acacia."[Laughing]
-"My calling....I wonder what that will be?"[Happy]
+"My calling...I wonder what that will be?"[Happy]

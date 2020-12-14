@@ -8,4 +8,4 @@ Zuckerbork: "Why, yes." [Neutral]
 "You really are running out of things to say, aren’t you?"[Disgust]
 
 Acacia: "Wait, n-no, that's not what I meant!"
-'Shit I messed up! I need to think carefully about the meaning of these cards…'
+'Shit I messed up! I need to think carefully about the meaning of these cards...'

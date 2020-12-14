@@ -36,7 +36,7 @@ public class ResourceManager : MonoBehaviour
         
         paths_to_cards = new Dictionary<string, string>()
         {
-            {"DEBUG", "Cards/Debug/DebugCardCenter"},
+            {"DEBUG", "Cards/Sun"},
             {"Sun", "Cards/Sun"},
             {"Devil", "Cards/Devil"},
             {"Hermit", "Cards/Hermit"},

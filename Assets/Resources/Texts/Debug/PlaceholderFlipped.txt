@@ -1,1 +1,0 @@
-"This card is a debug card that's flipped and should not have appeared in-game."

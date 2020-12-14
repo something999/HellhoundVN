@@ -1,5 +1,5 @@
 SCENE - DARK
-Acacia: 'Ugh...my head…'
+Acacia: 'Ugh...my head...'
 'What even happened?'
 'This is the last time I go to an astrology convention. Swear on it!'
 'All of them are way too wild for me...'
@@ -19,7 +19,7 @@ Zuckerbork: "I am Zuckerbork, resident hellhound of, you guessed it, Hell."[Happ
 Acacia: "Ah, well, hello Mr.Zuckerbork, sir!" 
 "Quick question -- WHAT THE FUCK?"
 "I can't be--? Unless I’m--? How are you--?"
-"Am I….dead....?"
+"Am I...dead...?"
 
 Zuckerbork: "In simple terms yes..." [Happy]
 "But in complicated terms, no." [Neutral]
@@ -27,7 +27,7 @@ Zuckerbork: "In simple terms yes..." [Happy]
 "And I don’t have the time nor the patience to go through it all."[Disgust]
 "At any rate, let's proceed to the execution procedures."[Neutral]
 
-Acacia: "Wait a minute…'
+Acacia: "Wait a minute...'
 "<b>EXECUTION???</b>"
 
 Zuckerbork: "Ah, yes."[Neutral]
@@ -37,7 +37,7 @@ Zuckerbork: "Ah, yes."[Neutral]
 "You should be happy."[Neutral]
 "<b>Really happy.</b>"[Happy]
 
-Acacia: 'Oh my god. He’s actually going to eat me…'
+Acacia: 'Oh my god. He’s actually going to eat me...'
 'I need to do something -- and quick!'
 "W-wait a second!"
 "What if I, uh, gave you something in exchange for not eating me?"
@@ -75,12 +75,12 @@ Zuckerbork: "....." [Neutral]
 "If you can provide satisfactory fortune, you get to leave." [Neutral]
 "If not, I’m going to have to take a lunch break." [Happy]
 
-Acacia: 'Oh god….'
+Acacia: 'Oh god...'
 
 Zuckerbork: "Alright, let’s get this dogwash over with."[Irritated]
 "I’m a very busy pooch as you know." [Neutral]
 
-Acacia: 'He doesn’t seem like he’ll be easily convinced…'
+Acacia: 'He doesn’t seem like he’ll be easily convinced...'
 'He’s a business dog right? Maybe instead of love his fortune could be prosperity?'
 'Yeah yeah, good plan Acacia!'
 "Alright let’s do this!"

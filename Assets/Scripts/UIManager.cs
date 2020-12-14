@@ -20,10 +20,16 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject chances = null; // UI that displays chances
     [SerializeField] private Image transition_screen = null; 
     [SerializeField] private TextMeshProUGUI message = null;
-    [SerializeField] private string lose_message = "<b>An Unfortunate End</b>\nThe odds were not in your favor...";
-    [SerializeField] private string win_message = "<b>Fortune Favors the Bold</b>\nCongratulations!\nZuckerbork enjoyed your reading.";
+    private readonly string lose_message = "<b>An Unfortunate End</b>\n<size=75%>The odds were not in your favor...</size>";
+    private readonly string win_message = "<b>Fortune Favors the Bold</b>\n<size=75%>Zuckerbork enjoyed your reading, but it's a long way out of hell...</size>";
+    private bool paused = false;
     [SerializeField] private int reference_width = 1600; // How wide the image is for a base 16:9 resolution
     [SerializeField] private int reference_height = 840; // How high the image can be for a base 16:9 resolution
+    
+    public void UpdatePaused(bool b)
+    {
+        paused = b;
+    }
     
     public void RemoveChance()
     {
@@ -36,11 +42,11 @@ public class UIManager : MonoBehaviour
         transition_screen.gameObject.SetActive(true);
         if (fadein)
         {
-            yield return Fade(transition_screen, time, Color.black, new Color (0f, 0f, 0f, 0f));
+            yield return Fade(transition_screen, time, new Color(.0607f, .0607f, .1415f, 1f), new Color (0f, 0f, 0f, 0f));
         }
         else
         {
-            yield return Fade(transition_screen, time, new Color(0f, 0f, 0f, 0f), Color.black);
+            yield return Fade(transition_screen, time, new Color(0f, 0f, 0f, 0f), new Color(.0607f, .0607f, .1415f, 1f));
         }
         if (!is_ending) transition_screen.gameObject.SetActive(false);
     }
@@ -69,8 +75,10 @@ public class UIManager : MonoBehaviour
     {
         transition_screen.gameObject.SetActive(true);
         message.text = win_message;
-        transition_screen.transform.GetChild(0).gameObject.SetActive(true);
-        transition_screen.transform.GetChild(transition_screen.transform.childCount-1).gameObject.SetActive(true);
+        foreach (Transform child in transition_screen.transform)
+        {
+            child.gameObject.SetActive(true);
+        }
     }
     
     // Swap image for background
@@ -115,13 +123,13 @@ public class UIManager : MonoBehaviour
     {
         if (display)
         {
+            cards.SetActive(true);
             foreach(string c in cards_to_show)
             {
                 Button card = Instantiate(Resources.Load<Button>(c));
                 card.transform.SetParent(cards.transform, false);
                 if (!enable)
                 {
-                    // StartCoroutine(Fade(card.GetComponent<Image>(), .5f, Color.white, new Color(0f, 0f, 0f, 0f)));
                     StartCoroutine(Fade(card.GetComponent<Image>(), .5f, new Color(0f, 0f, 0f, 0f), Color.white));
                     card.enabled = false;
                 }
@@ -138,6 +146,7 @@ public class UIManager : MonoBehaviour
                 StartCoroutine(Fade(child.GetComponent<Image>(), .5f, Color.white, new Color(0f, 0f, 0f, 0f)));
                 GameObject.Destroy(child.gameObject, 1f);
             }
+            cards.SetActive(false);
         }    
     }
     

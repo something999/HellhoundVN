@@ -11,4 +11,4 @@ Acacia: "Huh? Are you saying...?"
 Zuckerbork: "Don’t assume you have all the facts." [Neutral]
 "Success isn’t always so glamorous. I suggest you reevaluate your perspective."[Irritated]
 
-Acacia: 'Shit I messed up! I need to think carefully about the meaning of these cards…'
+Acacia: 'Shit I messed up! I need to think carefully about the meaning of these cards...'
