@@ -143,5 +143,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card_name: Devil
-  explanation_standard: Assets/Resources/Texts/Cards/DevilUpright.txt
-  explanation_reversed: Assets/Resources/Texts/Cards/DevilReversed.txt
+  explanation_standard: Texts/Cards/DevilUpright
+  explanation_reversed: Texts/Cards/DevilReversed

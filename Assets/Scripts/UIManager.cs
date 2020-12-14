@@ -20,11 +20,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject chances = null; // UI that displays chances
     [SerializeField] private Image transition_screen = null; 
     [SerializeField] private TextMeshProUGUI message = null;
+
     private readonly string lose_message = "<b>An Unfortunate End</b>\n<size=75%>The odds were not in your favor...</size>";
     private readonly string win_message = "<b>Fortune Favors the Bold</b>\n<size=75%>Zuckerbork enjoyed your reading, but it's a long way out of hell...</size>";
     private bool paused = false;
     [SerializeField] private int reference_width = 1600; // How wide the image is for a base 16:9 resolution
     [SerializeField] private int reference_height = 840; // How high the image can be for a base 16:9 resolution
+    
     
     public void UpdatePaused(bool b)
     {

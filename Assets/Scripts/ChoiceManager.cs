@@ -36,7 +36,7 @@ public class ChoiceManager : MonoBehaviour
         {
             if (game.CheckStatus())
             {
-                game.AddCommand("Assets/Resources/Texts/Acts/ZuckerborkFailure.txt");
+                game.AddCommand("Texts/Acts/ZuckerborkFailure.txt");
                 game.AddCommand("ending", "");
             }
             else game.AddCommand("choice", "Sun,Devil,Hermit");
