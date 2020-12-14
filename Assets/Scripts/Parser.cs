@@ -50,23 +50,21 @@ public class Parser : MonoBehaviour
     // Parses the instructions written in the filepath
     public List<command> Parse(string filepath)
     {
+        TextAsset TextDialogue = Resources.Load<TextAsset>(filepath);
+        Debug.Log(filepath);
+        string[] TextLines = TextDialogue.text.Split(System.Environment.NewLine.ToCharArray());
+
         List<command> command_list = new List<command>();
-        try
-        {
-            using (StreamReader reader = new StreamReader(filepath))
-            {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+        try {
+            foreach (string LineCurrent in TextLines)   {
+                foreach (regular_expression r in regex_list)
                 {
-                    foreach (regular_expression r in regex_list)
-                    {
-                        RecordRegexMatch(line, r.pattern, r.group_name, command_list);
-                        // CheckCommand(cmd, command_list);
-                    }
+                    RecordRegexMatch(LineCurrent, r.pattern, r.group_name, command_list);
+                    // CheckCommand(cmd, command_list);
                 }
-                reader.Close();
             }
         }
+
         catch (Exception e)
         {
             Debug.LogError("Parser: There was a problem reading " + filepath);

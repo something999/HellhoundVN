@@ -33,10 +33,10 @@ public class GameManager : Parser
        };
        acts = new string[]
        {
-           "Assets/Resources/Texts/Acts/ZuckerborkPart1.txt",
-           "Assets/Resources/Texts/Acts/ZuckerborkPart3.txt",
-           "Assets/Resources/Texts/Acts/ZuckerborkPart4.txt",
-           "Assets/Resources/Texts/Acts/ZuckerborkPart5.txt"   
+           "Texts/Acts/ZuckerborkPart1",
+           "Texts/Acts/ZuckerborkPart3",
+           "Texts/Acts/ZuckerborkPart4",
+           "Texts/Acts/ZuckerborkPart5"   
        };
        command_list = Parse(acts[checkpoint]);
        StartCoroutine(PlayScene(command_list));
