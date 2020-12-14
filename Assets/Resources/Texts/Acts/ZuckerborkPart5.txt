@@ -10,7 +10,7 @@ Zuckerbork: "Hahahaha! You’re shaking like a newborn pup!"[Laughing]
 "Though this does mean you’ll have to get past my co-worker."[Neutral]
 
 Acacia: "Wait there’s more of you?!?!"
-"Ugh I don’t know if I can handle that…"
+"Ugh I don’t know if I can handle that..."
 
 Zuckerbork: “Well it’s not like you have much a choice."[Neutral]
 "You’ve proven yourself to be quite likable so I will offer you this advice."[Neutral]

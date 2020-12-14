@@ -1,5 +1,5 @@
 Acacia: 'Alright past done! This isn't too hard. Now to do the present.'
-'Wait a second…'
+'Wait a second...'
 SHOW-Sun,Hermit
 'Happiness and isolation? I can’t work off these!' 
 'Their meanings are unrelated to what’s going on!'
@@ -13,7 +13,7 @@ Acacia: "N-no it’s not that!"
 "It’ll just take me a bit to properly interpret them. I wanna give an accurate reading, ya know?"
 
 Zuckerbork: "..."[Netural]
-"Very well. Take your time I suppose…"[Neutral]
+"Very well. Take your time I suppose..."[Neutral]
 
 Acacia: 'Shoot, if I don't think of something quick, I’m dead!' 
 'Wait a sec! I’ve been using all these cards in the upright position.'

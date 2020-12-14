@@ -27,5 +27,5 @@ Acacia: "Well, you did all this to prove everyone wrong, and that’s great."
 
 Zuckerbork: "I suppose you have a point."[Confused]
 "I’ve been thinking lately... that maybe running and business and coding...isn’t my true calling."[Sadness]
-"These cards have proven themselves at least somewhat useful. So if I may ask…"[Sadness]
+"These cards have proven themselves at least somewhat useful. So if I may ask..."[Sadness]
 "What should I do to remedy this?"[Neutral]
