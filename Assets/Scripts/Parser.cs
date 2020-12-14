@@ -1,6 +1,6 @@
 // An object that reads text files and translates them into commands for the GameManager
 using System;
-using System.IO;
+// using System.IO;
 using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
@@ -51,7 +51,8 @@ public class Parser : MonoBehaviour
     public List<command> Parse(string filepath)
     {
         TextAsset TextDialogue = Resources.Load<TextAsset>(filepath);
-        string[] TextLines = TextDialogue.text.Split(System.Environment.NewLine.ToCharArray());
+        // string[] TextLines = TextDialogue.text.Split(System.Environment.NewLine.ToCharArray());
+        string[] TextLines = Regex.Split(TextDialogue.text, "\n|\r|\r\n");
 
         List<command> command_list = new List<command>();
         try {
