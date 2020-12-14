@@ -143,5 +143,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card_name: Hermit
-  explanation_standard: Assets/Resources/Texts/Cards/HermitUpright.txt
-  explanation_reversed: Assets/Resources/Texts/Cards/HermitReversed.txt
+  explanation_standard: Texts/Cards/HermitUpright
+  explanation_reversed: Texts/Cards/HermitReversed

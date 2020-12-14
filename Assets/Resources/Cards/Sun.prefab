@@ -143,5 +143,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card_name: Sun
-  explanation_standard: Assets/Resources/Texts/Cards/SunUpright.txt
-  explanation_reversed: Assets/Resources/Texts/Cards/SunReversed.txt
+  explanation_standard: Texts/Cards/SunUpright
+  explanation_reversed: Texts/Cards/SunReversed
