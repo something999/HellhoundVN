@@ -59,11 +59,9 @@ public class Parser : MonoBehaviour
                 foreach (regular_expression r in regex_list)
                 {
                     RecordRegexMatch(LineCurrent, r.pattern, r.group_name, command_list);
-                    // CheckCommand(cmd, command_list);
                 }
             }
         }
-
         catch (Exception e)
         {
             Debug.LogError("Parser: There was a problem reading " + filepath);
