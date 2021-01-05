@@ -1,0 +1,8 @@
+Zuckerbork: "Why, yes, I was working on the next update <b>before you so rudely interrupted me.</b>" [Disgust]
+"Even so, how does a software update connect with childhood?" [Neutral]
+"You are running out of things to say, aren't you?" [Confused]
+[Neutral]
+
+Acacia: "Wait, no, that's not what I meant!"
+"(Shit, I messed up!)"
+"(I need to think more carefully about the meaning of these cards.)"

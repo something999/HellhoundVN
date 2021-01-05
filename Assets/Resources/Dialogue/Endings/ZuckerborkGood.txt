@@ -1,0 +1,30 @@
+Zuckerbork: "Well, I must admit that you exceeded my expectations." [Neutral]
+"I thought this would be a quick way to shut you up, but it appears that I was wrong."
+"Thank you for enlightening me on the ways of fortune-telling." [Happy]
+"From now on, I'll try to not be so dimissive about the divinatory arts."
+
+Acacia: "I'm glad I was able to help you out!"
+"Does this by chance mean I won't be eaten?"
+
+Zuckerbork: "Hahahaha, you're shaking like a newborn pup!" [Laughing]
+"No, you will not be eaten." [Happy]
+"I'd say your life is a fair trade for helping me with my career."
+"Though this does mean you'll have to get past my co-worker." [Neutral]
+
+Acacia: "Wait, co-worker -- there are MORE of you?!"
+"I don't know if I can handle another threat on my life so soon..."
+
+Zuckerbork: "Well, you do not have much of a choice."
+"You have proven yourself likeable, so I will offer you some information."
+"My co-worker's's name is Carrion, and she has recently broken up with her boyfriend."
+"She is quite upset about it -- my Snoutbook meetings have been disrupted by her hysterical sobbing." [Disgust]
+"Perhaps you can offer her some relationship advice?" [Confused]
+
+Acacia: "Your co-worker broke up with her boyfriend...that's not much, but it's at least something."
+"Thanks."
+
+Zuckerbork: "Don't mention it." [Happy]
+"Now if you'll excuse me, I have to start looking for career goals."
+"If you're lucky, you might be the first human to make it out of hell!" [Laughing]
+
+Acacia: "I'll try my best..."

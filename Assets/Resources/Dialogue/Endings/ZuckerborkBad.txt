@@ -1,0 +1,6 @@
+Zuckerbork: "Well, it is clear that you lack the ability to see the future." [Disgust]
+"You've delayed me long enough with your little time-waster."
+"Fortunately for me, it's time for <b>lunch</b>." [Happy]
+
+Acacia: "(Fuck, I've made too many mistakes!)"
+"(This is the end for me...)"

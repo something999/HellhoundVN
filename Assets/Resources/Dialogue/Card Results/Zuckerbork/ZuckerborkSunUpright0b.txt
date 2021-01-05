@@ -1,0 +1,9 @@
+Zuckerbork: "..." [Disgust]
+"What kind of stunt are you trying to pull here, Ms. Acacia?"
+"Are you trying to insinuate that I am ignorant of things like hunger, homelessness, or bigotry?"
+"I am warning you now that it is not in your interests to mock me or my past." [Neutral]
+"Unless you want to end up as ground meat?" [Confused]
+
+Acacia: "Ah, no, sorry, sir!"
+"(Shit, I messed up!)"
+"(I need to think more carefully about the meaning of these cards.)"

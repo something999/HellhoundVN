@@ -1,0 +1,86 @@
+
+<<Office>>
+Acacia: "Woah, woah, woah! What is this?! Where am I?!"
+"Is this an office? What even happened last night?"
+
+???: "Ah, it appears you are our newest arrival." [Neutral]
+"Ms. Acacia Pantazis, it is a pleasure to make your acquaintance." [Neutral]
+"I am Zuckerbork, resident hellhound of -- obviously -- <b>Hell</b>." [Happy]
+[Neutral]
+
+Acacia:" Ah, well, hello Mr. Zuckerbork -- sir!"
+"Quick question: WHAT THE FUCK?"
+"I can't be here unless I'm --? How are you --?"
+"Shit. Am I...dead?"
+
+Zuckerbork: "In simple terms, yes, you are dead."
+"In complicated terms, your mental faculties are still functioning, and thus, by some standards, you are not dead."
+"I could explain the specifics of your situation, but it is a lot of paperwork."
+"And I do not have the time or patience to retrieve such trivial information when I could reveal your fate now."
+"So, Ms. Pantazis, let us discuss your execution."
+"Would you like your body to be braised, roasted, or fried?" [Confused]
+
+Acacia: "First, I prefer Acacia and second -- EXECUTION?!"
+
+Zuckerbork: "Indeed Ms. Acacia, you are to be executed." [Neutral]
+"You see, while the majority of humans here are destined to hard labor for eternity, a select few are chosen to act as sustenance for us hounds and the other creatures of Hell."
+"What a lucky soul you are to receive such a quick, painless end to your afterlife -- after the cutting of course."
+"You should be happy."
+"<b>Really happy</b>." [Happy]
+
+Acacia: "(Oh, fuck, he's actually going to eat me.)"
+"(I need to do something quick!)"
+"W-wait a second, Mr. Zuckerbork!"
+"What if instead of eating me, I gave you something equally enticing? "
+
+Zuckerbork: "..." [Disgust]
+"Ms. Acacia, I fear that you do not understand who you are attempting to barter with."
+"I am the richest hound in the entire underworld and a top-ranking official at that." [Angry]
+"What could you have that I could every possibly want?"
+
+Acacia: "I could, um, uh..."
+"(Come on, Acacia, think of something you can offer!)"
+"...read your fortune?"
+"(I'm dead.)"
+
+Zuckerbork: "Read my fortune?" [Confused]
+"Hahaha, perpawsterous!" [Laughing]
+"Childish magic tricks cannot complete with reality, not even here in Hell." [Happy]
+"Why should I not eat you now and allow us to both get this over with?" [Disgust]
+"I have to release an update for Snoutbook in an hour."
+"And I would rather not be late due to some divinatory nonsense."
+
+Acacia: "(Shit, he's not buying it!)"
+"(If I don't figure something out fast, I'm dog food!)"
+"H-hold on a sec!"
+
+Zuckerbork: "Did you not hear me earlier?" [Angry]
+"I would rather not delay this update again, so pipe down and --"
+
+Acacia: "I'm reading your fortune!"
+"You talk big, but for a facts and logic guy, you don't have anything you can use to back up your statement."
+"Anyone can draw a tarot card, but only fortune-tellers can interpret them."
+"Let me present the cards, and you can judge the accuracy of my statements."
+"If my reading is completely off, you can eat me."
+"But you won't be able to know what the cards say unless you listen to me."
+
+Zuckerbork: "..." [Disgust]
+"...heheheh." [Neutral]
+"Hahahaha." [Happy]
+"<b>Ahahahahahahahahahahahah!</b>" [Laughing]
+"Fine, you intrigued me runt." [Neutral]
+"If you can provide a satisfactory fortune, you get to leave." [Neutral]
+"But if not, I am going to have a little lunch break." [Happy]
+[Neutral]
+Acacia: "(Oh, fuck, he doesn't seem like he'll be easily convinced.)"
+"(Relax, Acacia, you've done readings before!)"
+"(Just draw three cards for the past, present, and future.)"
+"(Don't present the same card twice, and try to choose a card that relates to the conversation.)"
+
+"(OK, first card is for the past.)"
+"(This guy is a business hound, and he said he had a lot of money.)"
+"(But he couldn't have always been rich, right?)"
+"(Everyone starts from somewhere, so maybe I should start by asking about his background.)"
+"(Yeah, yeah, background is a good start -- you can do this, Acacia!)"
+"(Let's show this hound the power of the tarot cards!"
+((Sun || Devil || Hermit))

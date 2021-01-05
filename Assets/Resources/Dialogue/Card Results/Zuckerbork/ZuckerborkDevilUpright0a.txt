@@ -1,0 +1,28 @@
+Acacia: "The Devil, in the upright position."
+"This card represents your past."
+"Tell me, Mr. Zuckerbork -- did you have a lot growing up?"
+ 
+Zuckerbork: 'Define "a lot."' [Confused]
+ 
+Acacia: "Well, the Devil card represents attachment to material goods."
+"Since this is your past card, I'm assuming money played some kind of factor in your childhood?"
+ 
+Zuckerbork: "...I will only say this once." [Disgust]
+"I was the runt of my litter." [Neutral]
+"My parents deemed me useless and abandoned me at the kennels with only the clothes on my back."
+"Thus, I was thrown away with others like me." [Sadness]
+'We were barely given so much as a glance, let alone these "material things" you keep yapping about!' [Disgust]
+"Not like it matters anymore."
+"Now <b>I</b> am part of the top hound security here in Hell, and <b>I</b> am rich enough to buy every single hound here a new squeaker twice!" [Angry]
+"I certainly showed everyone my potential!" [Disgust]
+ 
+Acacia: "(Woah, I thought rich people struggling was a thing that happened in movies.)"
+"(I guess capitalism works differently in hell.)"
+"It must've been hard for you to endure such hardship...I'm so sorry."
+"This card seems to represent your struggle with having nothing."
+"From poverty, you had to work hard and climb your way to the top, leading us to the present, am I right?"
+
+Zuckerbork: "Yes, that is correct." [Neutral]
+"I would rather not dwell on the past too much, so let's move on, shall we?"
+
+Acacia: "Of course."

@@ -1,0 +1,5 @@
+Zuckerbork: "I will ignore this little mishap for now." [Neutral]
+"One mistake does not equal incompetence."
+"Even my best programmers make mistakes."
+"But if there are more problems, you can consider yourself dead." [Disgust]
+[Neutral]

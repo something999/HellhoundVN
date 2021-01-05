@@ -1,0 +1,6 @@
+Zuckerbork: "Your mimicry is either a sign of daftness or incompetence." [Disgust]
+"In either case, I do not find your little act funny."
+"Knock it off, or I will end your existence <b>permanently.</b>" [Neutral]
+
+Acacia: "(Shit, this is going downhill fast!)
+"(Come on, Acacia, quit acting like this!)"

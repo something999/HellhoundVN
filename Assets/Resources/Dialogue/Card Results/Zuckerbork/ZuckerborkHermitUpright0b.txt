@@ -1,0 +1,11 @@
+Zuckerbork: "While your reading has some truth to it, I cannot say that it is 100% accurate." [Neutral]
+"Even though I was alone, seclusion did not lead me to my current career path."
+"You seem to be using rather broad strokes to paint my past here." [Disgust]
+' You are essentially telling me that I made my own success.'
+"And yes, I worked hard to develop my own social media company."
+"But hard work is necessary for achieving dreams."
+"I suggest you become a bit more specific if you want to achieve your dream of escape." [Neutral]
+
+Acacia: "I understand, sir!"
+"(Shit, I messed up!)"
+"(I need to think more carefully about the meaning of these cards.)"

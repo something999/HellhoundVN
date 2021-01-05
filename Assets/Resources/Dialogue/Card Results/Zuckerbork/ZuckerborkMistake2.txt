@@ -1,0 +1,7 @@
+Zuckerbork: "Ms. Acacia, did I not say I was a busy hound?" [Disgust]
+"My team has been preparing the Snoutbook update for two years."
+"We have to delay this update several times."
+"And every delay means potential customers leaving Snoutbook for Chipper and TailTales!" [Angry]
+"Snoutbook is becoming less relevant by the minute!"
+"You have one more chance to prove yourself or I. Will. Eat. You."
+[Disgust]

@@ -1,199 +1,141 @@
-﻿// GameManager, which controls the timing of in-game events
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
-// Inherits from parser so we can access the structures in Parser
-public class GameManager : Parser
+public class GameManager : MonoBehaviour
 {
-    [SerializeField] private ResourceManager resource_manager = null; // Reference to the SpriteManager script
-    [SerializeField] private CutSceneManager cutscene_manager = null; // Reference to the SpriteManager script
-    [SerializeField] private UIManager ui = null; // Reference to the UIManager script
-    private string[] answers; // <-- Preface this line with [SerializeField] to edit this from the Inspector
-    private string[] acts; // References to the script, which are meant to be executed in-order (excludes choices)
-    private int checkpoint = 0; // Where in answers do we need to check
+    [SerializeField] private string[] main_dialogue_filenames; // Contains all dialogue file locations
+    [SerializeField] private string[] correct_card_names; // Contains the names of the correct cards
+    [SerializeField] private string[] order_of_hounds; // The order of the hounds
+    [SerializeField] private int[] hound_checkpoint_counts; // Each hound has a number of checkpoints --> use this to keep track of failures. The length of hound_checkpoint_counts should be the same as order_of_hounds.
+    [SerializeField] private string failure_message_folder; // Where the failure messages are stored
+    [SerializeField] private string ending_folder; // Where the endings are stored
+    [SerializeField] private string good_ending_file; // Where the "good" ending is stored 
+    [SerializeField] private string bad_ending_file; // Where the normal "bad" ending is stored
+    [SerializeField] private string bad_ending_file_2; // Where the variant "bad" ending is stored
+    [SerializeField] private int number_of_chances = 3; // The max number of chances we have before it's game-over
     
-    public bool show_standard = true;
-    public bool show_flipped = false;
-    private bool show_back = true;
-    public string selected_card = "";
-    [SerializeField] private int chances = 3; // The number of chances the player has before it's game over
+    private ContentManager content_manager = null;
+    private ButtonManager button_manager = null;
+    private CardManager card_manager = null;
+    private CutsceneManager cutscene_manager = null;
     
-    private List<command> command_list;
-     
+    private bool allow_reversed = false; // Allows the player to present  a card reversed
+    private int file_index = 0; // Which file are we starting with 
+    private int card_index = 0; // Which answer are we checking
+    private int hound_index = 0; // Which hound we're looking at
+    private int hound_checkpoint = 0; // Which index are we looking at
+    private int mistake_checkpoint = 0; // How many wrong choices have we made in the game?
+    private int repeat_checkpoint = 0; // Are we repeating the same choice?
+    
+    private string last_chosen_card = ""; // The name of the previously chosen card
+    private string current_chosen_card = ""; // The name of the card chosen
+    
     private void Start()
     {
-       answers = new string[]
-       {
-           "Devilupright",
-           "Hermitflipped",
-           "Sunupright"
-           // Insert new answers here
-       };
-       acts = new string[]
-       {
-           "Texts/Acts/ZuckerborkPart1",
-           "Texts/Acts/ZuckerborkPart3",
-           "Texts/Acts/ZuckerborkPart4",
-           "Texts/Acts/ZuckerborkPart5"   
-       };
-       command_list = Parse(acts[checkpoint]);
-       StartCoroutine(PlayScene(command_list));
+        content_manager = this.GetComponent<ContentManager>();
+        button_manager = this.GetComponent<ButtonManager>();
+        card_manager = this.GetComponent<CardManager>();
+        cutscene_manager = this.GetComponent<CutsceneManager>();
+        StartCoroutine(PlayIntro());
     }
     
-    /*
-        Read the list of commands and execute the instructions
-    */
-    public IEnumerator PlayScene(List<command> command_list)
+    // Play the introduction sequence
+    public IEnumerator PlayIntro ()
     {
-        foreach (command c in command_list)
+        yield return StartCoroutine(content_manager.ProcessContent(main_dialogue_filenames[file_index], 0));
+        yield return StartCoroutine(cutscene_manager.ShowTransitionScreen());
+        file_index += 1;
+        yield return StartCoroutine(content_manager.ProcessContent(main_dialogue_filenames[file_index], 0));
+    }
+    
+    // Reveal the available cards
+    public IEnumerator ShowCardChoices(string path_to_upright, string path_to_reversed)
+    {
+        card_manager.EnableCards(false);
+        yield return StartCoroutine(content_manager.ProcessContent(path_to_upright, 0));
+        if (allow_reversed) yield return StartCoroutine(content_manager.ProcessContent(path_to_reversed, 0));
+        button_manager.ShowButtons(true, allow_reversed);
+    } 
+    
+    // Record a card's name so we can check it later
+    public void RecordCardName(string card_name)
+    {
+        current_chosen_card = card_name;
+    }
+    
+    // Check the card and make sure it's correct
+    public IEnumerator CheckCard (string card_state)
+    {
+        card_manager.ResetCards();
+        button_manager.ShowButtons(false, false);
+        // Example: ZuckerborkSunUpright0
+        string player_response = order_of_hounds[hound_index] + current_chosen_card + card_state + hound_checkpoint;
+        if (player_response == correct_card_names[card_index])
         {
-            switch (c.type)
+            yield return StartCoroutine(PlayNextMessage());
+            yield return null;
+        }
+        else if (repeat_checkpoint + mistake_checkpoint + 1 > number_of_chances)
+        {
+            if (last_chosen_card == current_chosen_card) yield return StartCoroutine(content_manager.ProcessContent(new string[] {ending_folder + bad_ending_file_2, ending_folder + bad_ending_file}, 0));
+            else yield return StartCoroutine(content_manager.ProcessContent(ending_folder + bad_ending_file, 0));
+            cutscene_manager.PlayBadEnding();
+        }
+        else yield return StartCoroutine(PlayFailureMessage(player_response));
+        last_chosen_card = current_chosen_card;
+    }
+    
+    // If the choice was right, play the next piece of dialogue
+    private IEnumerator PlayNextMessage()
+    {
+        file_index += 1;
+        if (file_index >= main_dialogue_filenames.Length - 1)
+        {
+            yield return StartCoroutine(content_manager.ProcessContent(ending_folder + good_ending_file, 0));
+            cutscene_manager.PlayGoodEnding();
+        }
+        else
+        {
+            StartCoroutine(content_manager.ProcessContent(main_dialogue_filenames[file_index], 0));
+            UpdateCheckpoint();
+        }
+    }
+    
+    // If the choice was wrong, play the unique failure message for that card
+    private IEnumerator PlayFailureMessage(string state)
+    {
+        // Check if this is a situation where we chose the same card again
+        if (last_chosen_card == current_chosen_card)
+        {
+            yield return StartCoroutine(content_manager.ProcessContent(new string[] {failure_message_folder + state + "a", failure_message_folder + order_of_hounds[hound_index] + "Repeat" + repeat_checkpoint}, 0));
+            repeat_checkpoint += 1;
+        }
+        else
+        {
+            yield return StartCoroutine(content_manager.ProcessContent(new string[] {failure_message_folder + state + "a", failure_message_folder + state + "b", failure_message_folder + order_of_hounds[hound_index] + "Mistake" + mistake_checkpoint}, 0));
+            mistake_checkpoint += 1;
+        }
+        button_manager.GoBackToCards();
+    }
+    
+    // Update the checkpoints so that they match the flow of the story
+    private void UpdateCheckpoint()
+    {
+        if (hound_checkpoint > hound_checkpoint_counts[hound_index])
+        {
+            if (hound_index < order_of_hounds.Length - 1)
             {
-                case "clear":
-                    ClearChoices();
-                    break;
-                case "cutscene": // Meant for card cutscenes, not fade-ins
-                    StartCoroutine(cutscene_manager.PlayCutscene());
-                    break;
-                case "transition":
-                    yield return StartCoroutine(ui.PlayTransition(2f, true, false));
-                    break;
-                case "ending":
-                    yield return StartCoroutine(ui.PlayTransition(2f, false, true));
-                    ui.ShowGameOver();
-                    break;
-                case "victory":
-                    yield return StartCoroutine(ui.PlayTransition(2f, false, true));
-                    ui.ShowVictory();
-                    break;
-                case "buttons":
-                    ui.ShowButtons(true, show_flipped, show_back);
-                    break;
-                case "show":
-                    ShowChoices(c.arg, false);
-                    break;                    
-                case "choice":
-                    ShowChoices(c.arg, true);
-                    break;
-                case "move":
-                    if (checkpoint == 0) ui.DisableCard(c.arg, false, true, "Devil(Clone)");
-                    else if (checkpoint == 2) ui.DisableCard(c.arg, false, true, "Sun(Clone)");
-                    else ui.DisableCard(c.arg, false, true, "");
-                    break;
-                case "scene": 
-                    ui.ChangeBackgroundImage(resource_manager.GetBackgroundPath(c.arg));
-                    break;
-                case "emotion": 
-                    ui.ChangeCharacterImage(resource_manager.GetCharacterPath(c.arg));
-                    break;
-                case "character":
-                    ui.ChangeCharacterText(c.arg);
-                    break;
-                 case "dialogue":
-                    yield return ui.ChangeDialogueText(c.arg);
-                    break;
-                 case "thought":
-                    yield return ui.ChangeDialogueText(c.arg, true);
-                    break;
-                 default:
-                    break;
+                hound_checkpoint = 0;
+                mistake_checkpoint = 0;
+                repeat_checkpoint = 0;
+                last_chosen_card = "";
+                hound_index += 1;
             }
         }
-        ui.ResetAll();
-        ClearCommands();
-    }
-    
-    public List<command> GetCommands()
-    {
-        return command_list;
-    }
-    
-    // Empty the command list
-    public void ClearCommands()
-    {
-        command_list.Clear();
-    }
-    
-    // Add a command
-    public void AddCommand(string type, string arg)
-    {
-        command_list.Add(new command(type, arg));
-    }
-    
-    // Add a command by parsing the file at the designated filepath
-    public void AddCommand(string filepath)
-    {
-        command_list.AddRange(Parse(filepath));
-    }
-    
-    //Proceed to the next part
-    public string GetNextPart()
-    {
-        checkpoint += 1;
-        if (checkpoint == 1)
+        else 
         {
-            show_flipped = true;
+            hound_checkpoint += 1;
         }
-        if (checkpoint == 2)
-        {
-            show_back = false;
-        }
-
-        return acts[checkpoint];
-    }
-    
-    // Show all the available choices
-    private void ShowChoices(string line, bool enable = true)
-    {
-        string[] choices = line.Split(',');
-        for (int i = 0; i < choices.Length; i++)
-        {
-            choices[i] = resource_manager.GetButtonPath(choices[i]);
-        }
-        if (!enable) ui.ShowCards(true, choices, false);
-        else ui.ShowCards(true, choices, true);
-    }
-    
-    // Clear the choice screens
-    public void ClearChoices()
-    {
-        ui.ShowCards(false);
-        ui.ShowButtons(false, false, false);
-    }
-    
-    public IEnumerator PlayChoice()
-    {
-       yield return StartCoroutine(PlayScene(command_list));  
-       AddCommand("character", "Acacia");
-       if (checkpoint < 2) AddCommand("thought", "Should I present this card?");
-       else AddCommand("thought", "Should I present this card upright or reversed?");
-       AddCommand("buttons", "");
-       yield return StartCoroutine(PlayScene(command_list));
-    }
-    
-    public void ReshowCards()
-    {
-        ui.ResetCards();
-        ui.ShowButtons(false, show_flipped, show_back);
-    }
-    
-    public bool CheckAnswer(string choice)
-    {
-        return choice.Equals(answers[checkpoint]);
-    }
-    
-    public bool CheckStatus()
-    {
-        chances -= 1;
-        ui.RemoveChance();
-        return chances == 0;
-    }
-    
-    public int GetCheckpoint()
-    {
-        return checkpoint;
     }
 }

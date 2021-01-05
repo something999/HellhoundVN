@@ -1,0 +1,5 @@
+Zuckerbork: "Ms. Acacia, for someone who wanted to live, you do not seem to be taking this fortune-telling session seriously." [Neutral]
+"Are you trying to stall for time?" [Confused]
+"Nobody can get into this office without my permission." [Neutral]
+"So if you're waiting for someone to come and save you, say goodbye to that idea." [Disgust]
+"Your hero is not coming, and I am getting tired of your little game." [Neutral]

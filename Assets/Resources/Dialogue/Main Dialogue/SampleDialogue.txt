@@ -1,0 +1,10 @@
+<<Wendys>>
+Char1: "I'm just saying we could find aliens if the government really tried." [Disgust]
+"We have the technology!"
+"Unless -- you don't think --" [Fear]
+'<i>That the government is made of "aliens"!</i>'
+
+Char2: "Mam, this is a Wendy's." [Neutral]
+"Now, please, can I have your order? <b>You're holding up the line.</b>" [Angry]
+{{Devil}}
+((Sun || Devil))

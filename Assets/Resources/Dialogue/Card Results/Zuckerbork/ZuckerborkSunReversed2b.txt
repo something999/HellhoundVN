@@ -1,0 +1,8 @@
+Zuckerbork: "So that's it?" [Disgust]
+"You come into my office, distract me from my work, make me play this game -- all to tell me that my life's work was for nothing?" [Angry]
+[Disgust]
+Acacia: "Wait, don't eat me!"
+"I'm sorry -- there was a mistake!" 
+"(Shit, I messed up!)"
+"(I need to think more carefully about the meaning of these cards.)"
+[Neutral]

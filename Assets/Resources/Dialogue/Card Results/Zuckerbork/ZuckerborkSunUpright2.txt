@@ -1,0 +1,12 @@
+Acacia: "The Sun, in the upright position."
+"This card represents the future."
+"According to this card, readjusting your career could help you figure out your passions!"
+"If you find your calling -- and others to support that calling -- you can lead a life of fulfillment."
+"Don't let you dreams be dreams, Mr. Zuckerbork!"
+"Stop living for other people, and start living for yourself!"
+
+Zuckerbork: "I see." [Neutral]
+"Deep down, I knew I wasn't happy with my work." [Sadness]
+"But it took someone else saying it for me to realize that life does not end with Snoutbook."
+"It appears that I have been proven wrong with this fortune-telling business." [Neutral]
+"My calling...I wonder what that will be." [Neutral]

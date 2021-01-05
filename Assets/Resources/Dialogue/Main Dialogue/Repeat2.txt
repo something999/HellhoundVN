@@ -1,0 +1,5 @@
+Char1: "Not a chance -- for all I know, you're with the aliens!"
+"And I bet you are!"
+Char2: "ALRIGHT PAL, YOU ASKED FOR THIS!"
+Char1: "Wha--AARGH!"
+Char2: "NEXT!"

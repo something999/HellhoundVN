@@ -1,0 +1,4 @@
+Char1: "NEVER!"
+Char2: "(You're kidding me.)"
+Char2: "Fine."
+"I'll give you a few more minutes."

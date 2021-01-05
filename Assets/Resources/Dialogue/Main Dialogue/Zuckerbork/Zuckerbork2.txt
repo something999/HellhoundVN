@@ -1,0 +1,29 @@
+Acacia: "(Alright, Acacia, past is done!)"
+"(Giving tarot card reads to hungry hounds isn't too hard.)"
+"(Now to do the present -- hang on.)"
+{{Sun | Hermit}}
+"(Shit, I can't work off of these!)"
+"(Happiness and aimlessness -- these cards' meanings are unrelated to what's going on!)"
+"(I'm screwed!)"
+
+Zuckerbork: "Is something wrong, Ms. Acacia?" [Confused]
+"You seem to be a bit pale." [Neutral]
+"Perhaps you messed up your little magic trick?" [Happy]
+
+Acacia: "N-no, it's not that!"
+"It's just that these cards have very interesting meanings!"
+"It'll just take me a bit to properly interpret them."
+"I wanna give you an accurate reading, ya know?"
+"(Smooth, Acacia, smooth.)"
+
+Zuckerbork: "..." [Neutral]
+"Given the accuracy of your past interpretation, I suppose I can wait a bit longer."
+"Take your time."
+
+Acacia: "(Shoot, if I don't think of something, I'm done for!)"
+"(What can I do with these cards again? Hold them, shuffle them, flip them -- wait a sec!)"
+"(I've been using my cards in the upright position!)"
+"(In tarot, reversed cards represent the opposite of their upright meanings.)"
+"(I might be able to present a meaning relevant to the current situation if I reverse the Sun or Hermit.)"
+"(OK, let's deal with the present!)"
+((Sun || Hermit))
