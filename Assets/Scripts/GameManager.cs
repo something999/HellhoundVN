@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     private ButtonManager button_manager = null;
     private CardManager card_manager = null;
     private CutsceneManager cutscene_manager = null;
+    [SerializeField] private LivesSystem lives_system = null;
     
     private bool allow_reversed = false; // Allows the player to present  a card reversed
     private int file_index = 0; // Which file are we starting with 
@@ -69,15 +70,17 @@ public class GameManager : MonoBehaviour
     {
         card_manager.ResetCards();
         button_manager.ShowButtons(false, false);
-        // Example: ZuckerborkSunUpright0
+        
+        // Example player_response: ZuckerborkSunUpright0
         string player_response = order_of_hounds[hound_index] + current_chosen_card + card_state + hound_checkpoint;
         if (player_response == correct_card_names[card_index])
         {
-            yield return StartCoroutine(PlayNextMessage());
+            yield return StartCoroutine(PlayNextMessage(player_response));
             yield return null;
         }
         else if (repeat_checkpoint + mistake_checkpoint + 1 > number_of_chances)
         {
+            yield return StartCoroutine(PlayFailureMessage(player_response));
             if (last_chosen_card == current_chosen_card) yield return StartCoroutine(content_manager.ProcessContent(new string[] {ending_folder + bad_ending_file_2, ending_folder + bad_ending_file}, 0));
             else yield return StartCoroutine(content_manager.ProcessContent(ending_folder + bad_ending_file, 0));
             cutscene_manager.PlayBadEnding();
@@ -87,10 +90,11 @@ public class GameManager : MonoBehaviour
     }
     
     // If the choice was right, play the next piece of dialogue
-    private IEnumerator PlayNextMessage()
+    private IEnumerator PlayNextMessage(string state)
     {
         file_index += 1;
-        if (file_index >= main_dialogue_filenames.Length - 1)
+        yield return StartCoroutine(content_manager.ProcessContent(failure_message_folder + state + "a", 0));
+        if (file_index > main_dialogue_filenames.Length - 1)
         {
             yield return StartCoroutine(content_manager.ProcessContent(ending_folder + good_ending_file, 0));
             cutscene_manager.PlayGoodEnding();
@@ -105,18 +109,26 @@ public class GameManager : MonoBehaviour
     // If the choice was wrong, play the unique failure message for that card
     private IEnumerator PlayFailureMessage(string state)
     {
-        // Check if this is a situation where we chose the same card again
-        if (last_chosen_card == current_chosen_card)
+         yield return StartCoroutine(content_manager.ProcessContent(failure_message_folder + state + "a", 0));
+        
+        if (repeat_checkpoint + mistake_checkpoint + 1 > number_of_chances)
         {
-            yield return StartCoroutine(content_manager.ProcessContent(new string[] {failure_message_folder + state + "a", failure_message_folder + order_of_hounds[hound_index] + "Repeat" + repeat_checkpoint}, 0));
+            yield return StartCoroutine(content_manager.ProcessContent(failure_message_folder + state + "b", 0));
+        }
+        // Check if this is a situation where we chose the same card again
+        else if (last_chosen_card == current_chosen_card)
+        {
+            yield return StartCoroutine(content_manager.ProcessContent(failure_message_folder + order_of_hounds[hound_index] + "Repeat" + repeat_checkpoint, 0));
+            button_manager.GoBackToCards();
             repeat_checkpoint += 1;
         }
         else
         {
-            yield return StartCoroutine(content_manager.ProcessContent(new string[] {failure_message_folder + state + "a", failure_message_folder + state + "b", failure_message_folder + order_of_hounds[hound_index] + "Mistake" + mistake_checkpoint}, 0));
+            yield return StartCoroutine(content_manager.ProcessContent(new string[]{failure_message_folder + state + "b", failure_message_folder + order_of_hounds[hound_index] + "Mistake" + mistake_checkpoint}, 0));
             mistake_checkpoint += 1;
+            button_manager.GoBackToCards();
         }
-        button_manager.GoBackToCards();
+        lives_system.RemoveLife();
     }
     
     // Update the checkpoints so that they match the flow of the story
@@ -131,11 +143,20 @@ public class GameManager : MonoBehaviour
                 repeat_checkpoint = 0;
                 last_chosen_card = "";
                 hound_index += 1;
+                card_index += 1;
             }
         }
         else 
         {
             hound_checkpoint += 1;
+            card_index += 1;
+            if (hound_checkpoint == 1) allow_reversed = true;
         }
+    }
+    
+    // Get the name of the current hound
+    public string GetCurrentHound()
+    {
+        return order_of_hounds[hound_index];
     }
 }

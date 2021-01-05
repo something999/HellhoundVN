@@ -47,7 +47,7 @@ public class CutsceneManager : MonoBehaviour
     public void PlayGoodEnding()
     {
         transition_background.gameObject.SetActive(true);
-        game_over_title.text = "<b>Fortune Favors the Bold</b>\n<size=75%>Zuckerbork enjoyed your reading, but it's a long way out of hell...</size>";
+        game_over_title.text =  "<b><size=120%><font=\"SawarabiGothic\">Fortune Favors the Bold</b></font>\n<size=85%>Zuckerbork enjoyed your reading, but you still have a long way to go.</size>";
         button_label.text = "To be continued another time";
         StartCoroutine(ShowGameOverScreen());
     }
@@ -56,7 +56,7 @@ public class CutsceneManager : MonoBehaviour
     public void PlayBadEnding()
     {
         transition_background.gameObject.SetActive(true);
-        game_over_title.text = "<b>A Tragic Demise</b>\n<size=75%>You died, but at least you satiated a hound's hunger.</size>";
+        game_over_title.text = "<b><size=120%><font=\"SawarabiGothic\">A Tragic Demise</b></font>\n<size=85%>You died, but at least you satiated a hound's hunger.</size>";
         button_label.text = "The end";
         StartCoroutine(ShowGameOverScreen());
     }

@@ -1,7 +1,7 @@
 Acacia: "(Alright, Acacia, past is done!)"
 "(Giving tarot card reads to hungry hounds isn't too hard.)"
 "(Now to do the present -- hang on.)"
-{{Sun | Hermit}}
+{{Sun || Hermit}}
 "(Shit, I can't work off of these!)"
 "(Happiness and aimlessness -- these cards' meanings are unrelated to what's going on!)"
 "(I'm screwed!)"

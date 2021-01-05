@@ -15,6 +15,10 @@ public class ContentManager : MonoBehaviour
     private DialogueBoxManager dialogue_box_manager = null;
     private CardManager card_manager = null;
     private GameManager game_manager = null;
+    private SpriteManager sprite_manager = null;
+    
+    private bool cutscene_enabled = false; 
+    private string last_recorded_cutscene = "";
     
     private void Awake()
     {
@@ -22,6 +26,7 @@ public class ContentManager : MonoBehaviour
         dialogue_box_manager = this.GetComponent<DialogueBoxManager>();
         card_manager = this.GetComponent<CardManager>();
         game_manager = this.GetComponent<GameManager>();
+        sprite_manager = this.GetComponent<SpriteManager>();
     }
     
     // Travels through the dialogue line-by-line and processes information
@@ -48,26 +53,45 @@ public class ContentManager : MonoBehaviour
                 // Assume that a match was found
                 if (!string.IsNullOrEmpty(scene)) 
                 {
-                    
-                } // Load background
+                    sprite_manager.UpdateBackground(scene);
+                } 
+                if (!string.IsNullOrEmpty(emotion)) 
+                {
+                    sprite_manager.UpdateCharacter(game_manager.GetCurrentHound(), emotion);
+                }
                 if (!string.IsNullOrEmpty(cutscene))
                 {
-                    yield return StartCoroutine(card_manager.ShowCards(Regex.Split(cutscene.Replace(" ", string.Empty), "\\|\\|")));
+                    /*yield return StartCoroutine(card_manager.ShowCards(Regex.Split(cutscene.Replace(" ", string.Empty), "\\|\\|")));
                     card_manager.EnableCards(false);
-                    yield return StartCoroutine(dialogue_box_manager.UpdateDialogue(""));
-                    card_manager.ResetCards();
+                    card_manager.DisableCardDisplayBackground(true);*/
+                    SaveCutscene(cutscene);
+                    cutscene_enabled = true;
                 }
                 if (!string.IsNullOrEmpty(choices)) 
                 {
+                    dialogue_box_manager.ClearBox();
                     yield return StartCoroutine(card_manager.ShowCards(Regex.Split(choices.Replace(" ", string.Empty), "\\|\\|")));
                     card_manager.EnableCards(true);
                     continue;
-                } // Load choices
+                }
                 if (!string.IsNullOrEmpty(character)) dialogue_box_manager.UpdateCharacterName(character);
-                if (!string.IsNullOrEmpty(dialogue))  yield return StartCoroutine(dialogue_box_manager.UpdateDialogue(dialogue));
-                if (!string.IsNullOrEmpty(emotion)) {} // Load emotions
+                if (!string.IsNullOrEmpty(dialogue))  
+                {
+                    if (cutscene_enabled)
+                    {
+                        yield return StartCoroutine(card_manager.ShowCards(Regex.Split(last_recorded_cutscene.Replace(" ", string.Empty), "\\|\\|")));
+                        card_manager.EnableCards(false);
+                        card_manager.DisableCardDisplayBackground(true);
+                    }
+                    yield return StartCoroutine(dialogue_box_manager.UpdateDialogue(dialogue));
+                    if (cutscene_enabled)
+                    {
+                        card_manager.ResetCards();
+                        card_manager.DisableCardDisplayBackground(false);
+                        cutscene_enabled = false;
+                    }
+                };
             }
-        // }
         dialogue_box_manager.ClearBox();
     }
 
@@ -77,6 +101,12 @@ public class ContentManager : MonoBehaviour
         {
             yield return StartCoroutine(ProcessContent(file, file_line_index));
         }
+    }
+    
+    // Save information about the cutscene so we care fire it with the next line of dialogue
+    private void SaveCutscene(string cutscene)
+    {
+        last_recorded_cutscene = cutscene;
     }
 }
 

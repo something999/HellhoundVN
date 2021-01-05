@@ -36,4 +36,10 @@ public class UIEffectManager : MonoBehaviour
         }
         yield return null;
     }
+    
+    // Move an object to create a parallax effect
+    public void MoveObjectBasedOnMousePosition(GameObject object_to_move, Vector2 center_point, Vector2 mouse_position, float distance, float max_distance)
+    {
+       object_to_move.transform.position = new Vector2(center_point.x + Mathf.Clamp(mouse_position.x * distance,  -max_distance, max_distance), center_point.y + Mathf.Clamp(mouse_position.y * distance, -max_distance, max_distance));
+    }
 }

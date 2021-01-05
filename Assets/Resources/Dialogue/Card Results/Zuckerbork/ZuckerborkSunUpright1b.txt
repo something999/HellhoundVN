@@ -1,0 +1,8 @@
+Zuckerbork: "Ms. Acacia, have you ever heard the saying that money can't buy happiness?" [Disgust]
+Acacia: "Yeah, I've heard that phrase, but I don't understand what you mean by that."
+Zuckerbork: "Don't assume that you have all of the facts."
+"Success isn't always so glamorous."
+"And if you think that success is everything, I suggest you re-evaluate your perspective."
+[Neutral]
+Acacia: "(Shit, I messed up!)"
+"(I need to think more carefully about the meaning of these cards.)"

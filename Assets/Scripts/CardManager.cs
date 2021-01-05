@@ -12,6 +12,7 @@ public class CardManager : MonoBehaviour
     
     private string[] last_known_cards = null; // The last known cards displayed on-screen
     private bool last_known_card_state = false; // The last known card state (interactable / not interactable)
+    private Color original_color = Color.white;
     
     private UIEffectManager ui_effect_manager = null; // Needed to fade-in the cards
     
@@ -19,6 +20,7 @@ public class CardManager : MonoBehaviour
     private void Awake()
     {
         ui_effect_manager = this.GetComponent<UIEffectManager>();
+        original_color = card_display.GetComponent<Image>().color;
     }
     
     // Display a set of cards on screen
@@ -83,12 +85,23 @@ public class CardManager : MonoBehaviour
     // Focus on the selected card (UI Effect)
     public IEnumerator FocusOnSelectedCard (GameObject card)
     {
-        yield return StartCoroutine(ui_effect_manager.FadeImage(card_display.transform, fade_duration, new Color(0f, 0f, 0f, 0f), Color.white, true));
-        foreach (Transform child in card_display.transform)
+        if (card_display.transform.childCount <= 1) yield return null;
+        else
         {
-            if (child.gameObject != card) child.gameObject.SetActive(false);
+            yield return StartCoroutine(ui_effect_manager.FadeImage(card_display.transform, fade_duration, new Color(0f, 0f, 0f, 0f), Color.white, true));
+            foreach (Transform child in card_display.transform)
+            {
+                if (child.gameObject != card) child.gameObject.SetActive(false);
+            }
+            yield return StartCoroutine(ui_effect_manager.FadeImage(card.GetComponent<Image>(), fade_duration, new Color(0f, 0f, 0f, 0f), Color.white, false));
         }
-        yield return StartCoroutine(ui_effect_manager.FadeImage(card.GetComponent<Image>(), fade_duration, new Color(0f, 0f, 0f, 0f), Color.white, false));
-        yield return null;
+    }
+    
+    // Disable the card display background
+    // This is use for a mini-cutscene
+    public void DisableCardDisplayBackground(bool disable_card_background)
+    {
+        if (disable_card_background) card_display.GetComponent<Image>().color = new Color(0f, 0f, 0f, 0f);
+        else card_display.GetComponent<Image>().color = original_color;
     }
 }
