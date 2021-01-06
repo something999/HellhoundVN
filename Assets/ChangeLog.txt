@@ -1,5 +1,16 @@
 CHANGELOG
 ---------------
+2021-01-06
+- Added the change log entry for 2021-01-05 (because I forgot to do that yesterday)
+---------------
+2021-01-05
+- Added new artwork
+- Added new audio from MDWade
+- Added new dialogue
+- Added a new control scheme --> Press the right mouse button to zoom through dialogue (note that this will skip all dialogue, including new lines)
+- Reorganized the project folders under Resources to improve task-finding (the old names were hard to understand)
+- Cleaned up project code and divided up tasks into smaller scripts
+---------------
 2020-12-13 11:18 PST
 - Added character images for Zuckerbork
 ---------------
